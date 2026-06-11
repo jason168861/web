@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>周俊誠|你的家庭財務夥伴</title>
+<meta name="description" content="財務顧問周俊誠:用聽得懂的話,陪你把錢的事一件一件理清楚。免費 30 分鐘諮詢。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;700&family=Fraunces:opsz,wght@9..144,500;9..144,650&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FAF6EE;
+  --paper-2:#F1EADA;
+  --pine:#16382E;
+  --pine-2:#23553F;
+  --sage:#7FA08A;
+  --honey:#D89436;
+  --honey-soft:#F6E3C2;
+  --ink:#2A332E;
+  --line:#E3DAC6;
+  --radius:18px;
+  --serif:"Noto Serif TC", serif;
+  --sans:"Noto Sans TC", sans-serif;
+  --num:"Fraunces", "Noto Serif TC", serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+body{
+  font-family:var(--sans);
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.75;
+  font-size:16.5px;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--honey-soft)}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* ---------- 導覽列 ---------- */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(250,246,238,.9);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:var(--serif);font-weight:700;font-size:1.25rem;color:var(--pine);text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo .seed{width:26px;height:26px;flex:none}
+.nav-links{display:flex;gap:28px;list-style:none;align-items:center}
+.nav-links a{text-decoration:none;font-size:.95rem;color:var(--ink);transition:color .2s}
+.nav-links a:hover{color:var(--pine-2)}
+.btn{
+  display:inline-block;background:var(--pine);color:#fff;text-decoration:none;
+  padding:12px 26px;border-radius:999px;font-weight:500;font-size:.97rem;
+  border:none;cursor:pointer;transition:transform .15s, background .2s;
+}
+.btn:hover{background:var(--pine-2);transform:translateY(-1px)}
+.btn:focus-visible, a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible{
+  outline:3px solid var(--honey);outline-offset:3px;border-radius:6px;
+}
+.btn.small{padding:9px 20px;font-size:.9rem}
+.btn.honey{background:var(--honey);color:var(--pine)}
+.btn.honey:hover{background:#c8851f;color:#fff}
+.nav-toggle{display:none}
+
+/* ---------- Hero ---------- */
+.hero{padding:84px 0 70px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.85rem;letter-spacing:.12em;color:var(--pine-2);
+  background:var(--honey-soft);padding:6px 16px;border-radius:999px;margin-bottom:22px;
+}
+.hero h1{
+  font-family:var(--serif);font-weight:700;color:var(--pine);
+  font-size:clamp(2.1rem, 4.6vw, 3.3rem);line-height:1.35;margin-bottom:20px;
+}
+.hl{position:relative;white-space:nowrap}
+.hl svg{position:absolute;left:0;bottom:-6px;width:100%;height:12px}
+.hero p.lead{font-size:1.12rem;color:#4A554E;max-width:32em;margin-bottom:32px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.hero-note{font-size:.85rem;color:#6E7A72;margin-top:14px}
+
+.portrait{position:relative;justify-self:center}
+.portrait .frame{
+  width:min(340px,80vw);aspect-ratio:4/5;border-radius:170px 170px 24px 24px;
+  background:linear-gradient(160deg,#DCE7DC,#B9CDBB);
+  display:flex;align-items:flex-end;justify-content:center;overflow:hidden;
+  border:1px solid var(--line);box-shadow:0 24px 60px -30px rgba(22,56,46,.35);
+}
+.portrait .frame span{
+  font-family:var(--serif);font-size:5rem;color:var(--pine);opacity:.35;margin-bottom:40%;
+}
+.portrait .badge{
+  position:absolute;right:-14px;bottom:26px;background:#fff;border:1px solid var(--line);
+  border-radius:14px;padding:12px 18px;box-shadow:0 12px 30px -16px rgba(22,56,46,.3);
+  font-size:.85rem;line-height:1.5;
+}
+.portrait .badge b{font-family:var(--num);font-size:1.3rem;color:var(--pine);display:block}
+
+/* ---------- 信任條 ---------- */
+.trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper-2)}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:30px 0;text-align:center}
+.trust-grid b{font-family:var(--num);font-size:1.9rem;color:var(--pine);display:block;line-height:1.2}
+.trust-grid span{font-size:.88rem;color:#5B6760}
+
+/* ---------- 共用區塊 ---------- */
+section{padding:88px 0}
+.sec-head{max-width:620px;margin-bottom:48px}
+.sec-head .tag{font-size:.85rem;letter-spacing:.18em;color:var(--honey);font-weight:700;display:block;margin-bottom:10px}
+.sec-head h2{font-family:var(--serif);font-weight:700;color:var(--pine);font-size:clamp(1.7rem,3.2vw,2.3rem);line-height:1.4;margin-bottom:14px}
+.sec-head p{color:#4A554E}
+
+/* ---------- 服務卡 ---------- */
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:32px 30px;transition:transform .2s, box-shadow .2s;
+}
+.card:hover{transform:translateY(-4px);box-shadow:0 20px 44px -24px rgba(22,56,46,.25)}
+.card .icon{width:46px;height:46px;border-radius:12px;background:var(--honey-soft);display:grid;place-items:center;margin-bottom:18px}
+.card h3{font-family:var(--serif);color:var(--pine);font-size:1.18rem;margin-bottom:10px}
+.card p{font-size:.95rem;color:#4A554E}
+.card .who{margin-top:14px;font-size:.82rem;color:var(--pine-2);background:#EFF4EE;display:inline-block;padding:4px 12px;border-radius:999px}
+
+/* ---------- 複利試算機(鎮站之寶) ---------- */
+.calc-sec{background:var(--pine);color:#EFEAE0;border-radius:32px;margin:0 16px}
+.calc-sec .sec-head h2,.calc-sec .sec-head .tag{color:#fff}
+.calc-sec .sec-head .tag{color:var(--honey)}
+.calc-sec .sec-head p{color:#C8D2C8}
+.calc{display:grid;grid-template-columns:1fr 1.1fr;gap:44px;align-items:stretch}
+.calc-panel{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:30px}
+.calc label{display:flex;justify-content:space-between;font-size:.92rem;margin:22px 0 8px;color:#DCE4DA}
+.calc label:first-of-type{margin-top:0}
+.calc output{font-family:var(--num);color:#fff;font-size:1.05rem}
+input[type=range]{
+  width:100%;appearance:none;height:6px;border-radius:99px;
+  background:rgba(255,255,255,.22);cursor:pointer;
+}
+input[type=range]::-webkit-slider-thumb{
+  appearance:none;width:22px;height:22px;border-radius:50%;
+  background:var(--honey);border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.3);
+}
+input[type=range]::-moz-range-thumb{
+  width:16px;height:16px;border-radius:50%;background:var(--honey);border:3px solid #fff;
+}
+.rate-hint{display:flex;justify-content:space-between;font-size:.75rem;color:#9FAFA2;margin-top:6px}
+.calc-tabs{display:flex;gap:10px;margin-bottom:26px;flex-wrap:wrap}
+.calc-tabs .tab{
+  padding:12px 24px;border-radius:999px;border:1px solid rgba(255,255,255,.25);
+  background:transparent;color:#DCE4DA;font-family:var(--sans);font-size:.95rem;cursor:pointer;transition:.2s;
+}
+.calc-tabs .tab[aria-selected=true]{background:var(--honey);color:var(--pine);border-color:var(--honey);font-weight:700}
+.seg{display:flex;gap:8px;margin:6px 0 4px}
+.seg button{
+  flex:1;padding:10px 6px;border-radius:12px;border:1px solid rgba(255,255,255,.25);
+  background:transparent;color:#DCE4DA;font-family:var(--sans);font-size:.88rem;cursor:pointer;transition:.2s;
+}
+.seg button[aria-pressed=true]{background:rgba(255,255,255,.92);color:var(--pine);border-color:#fff;font-weight:700}
+.answer{
+  background:linear-gradient(135deg, rgba(216,148,54,.25), rgba(216,148,54,.08));
+  border:1px solid rgba(216,148,54,.5);border-radius:16px;padding:20px 22px;margin-bottom:18px;
+}
+.answer span{font-size:.85rem;color:#EBD9B8;display:block;margin-bottom:4px}
+.answer b{font-family:var(--num);font-size:clamp(1.5rem,3vw,2.1rem);font-weight:650;color:#fff;line-height:1.3}
+.answer .sub{font-size:.84rem;color:#C8D2C8;margin-top:8px;display:block}
+.hide{display:none!important}
+.rate-btns{display:flex;gap:10px;margin-top:8px}
+.rate-btns button{
+  flex:1;padding:10px 0;border-radius:12px;border:1px solid rgba(255,255,255,.25);
+  background:transparent;color:#DCE4DA;font-family:var(--sans);font-size:.9rem;cursor:pointer;transition:.2s;
+}
+.rate-btns button[aria-pressed=true]{background:var(--honey);color:var(--pine);border-color:var(--honey);font-weight:700}
+.calc-result{display:flex;flex-direction:column}
+.result-nums{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px}
+.result-nums .box{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:18px 20px}
+.result-nums .box span{font-size:.82rem;color:#B9C6BB;display:block;margin-bottom:4px}
+.result-nums .box b{font-family:var(--num);font-size:clamp(1.3rem,2.4vw,1.8rem);font-weight:650;color:#fff}
+.result-nums .box.gain b{color:var(--honey)}
+.chart-box{flex:1;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:16px;min-height:220px}
+.chart-box svg{width:100%;height:100%;display:block}
+.calc-foot{font-size:.8rem;color:#9FAFA2;margin-top:16px;line-height:1.6}
+
+/* ---------- 流程 ---------- */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:step}
+.step{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;position:relative}
+.step::before{
+  counter-increment:step;content:counter(step,decimal-leading-zero);
+  font-family:var(--num);font-size:2.4rem;color:var(--honey);display:block;margin-bottom:10px;
+}
+.step h3{font-family:var(--serif);color:var(--pine);font-size:1.1rem;margin-bottom:8px}
+.step p{font-size:.93rem;color:#4A554E}
+.step .free{position:absolute;top:24px;right:24px;font-size:.75rem;background:var(--honey-soft);color:#8A5E14;padding:4px 12px;border-radius:999px;font-weight:700}
+
+/* ---------- 客戶回饋 ---------- */
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.quote{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;display:flex;flex-direction:column;gap:16px}
+.quote p{font-size:.95rem;color:#3E4A43;flex:1}
+.quote p::before{content:"「"}
+.quote p::after{content:"」"}
+.quote .who{display:flex;align-items:center;gap:12px}
+.quote .ava{width:42px;height:42px;border-radius:50%;background:var(--sage);color:#fff;display:grid;place-items:center;font-family:var(--serif);flex:none}
+.quote .who b{font-size:.92rem;color:var(--pine);display:block;line-height:1.4}
+.quote .who span{font-size:.8rem;color:#74807A}
+
+/* ---------- FAQ ---------- */
+.faq{max-width:760px;margin:0 auto}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden}
+.faq summary{
+  list-style:none;cursor:pointer;padding:20px 24px;font-weight:500;color:var(--pine);
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--num);font-size:1.4rem;color:var(--honey);transition:transform .2s;flex:none}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq .a{padding:0 24px 20px;font-size:.95rem;color:#4A554E}
+
+/* ---------- 關於我 ---------- */
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.about-grid .creds{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px}
+.creds span{font-size:.83rem;background:#fff;border:1px solid var(--line);padding:6px 14px;border-radius:999px;color:var(--pine-2)}
+.about-photo{aspect-ratio:1/1;border-radius:24px;background:linear-gradient(160deg,#E9E0CC,#CBD8C8);display:grid;place-items:center;border:1px solid var(--line)}
+.about-photo span{font-family:var(--serif);font-size:1rem;color:#7C8A7F}
+
+/* ---------- 結尾 CTA ---------- */
+.cta-final{background:var(--paper-2);border-top:1px solid var(--line)}
+.cta-inner{text-align:center;max-width:620px;margin:0 auto}
+.cta-inner h2{font-family:var(--serif);color:var(--pine);font-size:clamp(1.7rem,3.2vw,2.3rem);margin-bottom:14px}
+.cta-inner p{color:#4A554E;margin-bottom:30px}
+.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.line-btn{
+  display:inline-flex;align-items:center;gap:8px;background:#06C755;color:#fff;text-decoration:none;
+  padding:12px 26px;border-radius:999px;font-weight:500;transition:transform .15s,filter .2s;
+}
+.line-btn:hover{transform:translateY(-1px);filter:brightness(1.05)}
+
+footer{padding:36px 0 48px;font-size:.82rem;color:#74807A}
+footer .disc{max-width:720px;margin-top:10px;line-height:1.7}
+
+/* ---------- 進場動畫 ---------- */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- RWD ---------- */
+@media (max-width:880px){
+  .hero-grid,.calc,.about-grid{grid-template-columns:1fr}
+  .cards,.steps,.quotes{grid-template-columns:1fr}
+  .trust-grid{grid-template-columns:repeat(2,1fr);gap:24px 12px}
+  .nav-links{display:none}
+  .portrait{order:-1}
+  section{padding:64px 0}
+  .hero{padding:56px 0 48px}
+  .calc-sec{margin:0}
+  body{font-size:16px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="回到頁首">
+      <svg class="seed" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M12 21V11" stroke="#16382E" stroke-width="2" stroke-linecap="round"/>
+        <path d="M12 11C12 6 8 4 4 4c0 5 3 8 8 7Z" fill="#7FA08A"/>
+        <path d="M12 11c0-5 4-7 8-7 0 5-3 8-8 7Z" fill="#D89436"/>
+      </svg>
+      周俊誠
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">服務項目</a></li>
+      <li><a href="#calc">複利試算</a></li>
+      <li><a href="#process">合作流程</a></li>
+      <li><a href="#about">關於我</a></li>
+      <li><a href="#faq">常見問題</a></li>
+    </ul>
+    <a class="btn small" href="#contact">免費諮詢</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- Hero -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">🌱 RFC® 國際認證財務顧問師</span>
+      <h1>錢的事,<br>不用<span class="hl">一個人煩惱<svg viewBox="0 0 200 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9 Q 50 2, 100 7 T 198 5" fill="none" stroke="#D89436" stroke-width="3.5" stroke-linecap="round"/></svg></span>。</h1>
+      <p class="lead">嗨,我是俊誠。我不推銷商品,只做一件事:用你聽得懂的話,陪你把收支、保險、投資和退休,一件一件理清楚。</p>
+      <div class="hero-cta">
+        <a class="btn" href="#contact">預約免費 30 分鐘諮詢</a>
+        <a class="btn honey" href="#calc">先玩玩複利試算 →</a>
+      </div>
+      <p class="hero-note">首次諮詢完全免費,不綁定、不推銷,聊完不喜歡就當交個朋友。</p>
+    </div>
+    <div class="portrait">
+      <div class="frame"><span>誠</span></div>
+      <div class="badge"><b>RFC®</b>國際認證財務顧問師</div>
+    </div>
+  </div>
+</section>
+
+<!-- 信任條 -->
+<div class="trust">
+  <div class="wrap trust-grid">
+    <div><b>RFC®</b><span>國際認證財務顧問師</span></div>
+    <div><b>1 對 1</b><span>量身打造,絕不套版</span></div>
+    <div><b>30 分鐘</b><span>首次諮詢完全免費</span></div>
+    <div><b>0</b><span>商品銷售壓力</span></div>
+  </div>
+</div>
+
+<!-- 服務 -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="tag">SERVICES</span>
+      <h2>不管你在哪個階段,都有可以開始的地方</h2>
+      <p>理財不是有錢人的專利。月薪三萬也好、剛成家也好、準備退休也好——重點是從現在的你開始。</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal">
+        <div class="icon">💡</div>
+        <h3>小資理財啟航</h3>
+        <p>搞懂錢都花去哪、建立緊急預備金、踏出投資第一步。從零開始也完全沒問題,我會陪你打好地基。</p>
+        <span class="who">適合:理財新手、社會新鮮人</span>
+      </div>
+      <div class="card reveal">
+        <div class="icon">🏠</div>
+        <h3>家庭收支健檢</h3>
+        <p>雙薪家庭、育兒開銷、房貸壓力⋯⋯一次盤點全家的金流,找出可以優化的空間,讓每一塊錢花得安心。</p>
+        <span class="who">適合:新婚、育兒中的家庭</span>
+      </div>
+      <div class="card reveal">
+        <div class="icon">🛡️</div>
+        <h3>保單健診</h3>
+        <p>你買的保險真的保得到你嗎?我幫你逐張檢視現有保單,找出重複與缺口——只給建議,不賣保單。</p>
+        <span class="who">適合:保單一堆但看不懂的人</span>
+      </div>
+      <div class="card reveal">
+        <div class="icon">🌅</div>
+        <h3>退休與投資規劃</h3>
+        <p>算出你的退休需要多少錢,設計一套可以睡得著覺的長期投資計畫,讓未來的你謝謝現在的你。</p>
+        <span class="who">適合:30 歲以上開始布局的你</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 複利試算機 -->
+<section class="calc-sec" id="calc">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="tag">TRY IT</span>
+      <h2>複利試算機:看看時間能為你做什麼</h2>
+      <p>把你手上的一筆錢加上每月能投入的金額,拉拉看滑桿。很多人第一次看到結果都說:「早知道就早點開始。」</p>
+    </div>
+    <div class="calc-tabs reveal" role="tablist" aria-label="試算模式">
+      <button class="tab" role="tab" aria-selected="true" data-mode="forward">💰 我能滾出多少?</button>
+      <button class="tab" role="tab" aria-selected="false" data-mode="goal">🎯 目標怎麼達成?</button>
+    </div>
+    <div class="calc">
+      <div class="calc-panel reveal">
+        <!-- 共用 -->
+        <label for="lump">單筆投入(現有資金)<output id="lumpOut">NT$ 300,000</output></label>
+        <input type="range" id="lump" min="0" max="3000000" step="50000" value="300000" aria-label="單筆投入金額">
+
+        <!-- 模式一:正向試算 -->
+        <div id="grpForward">
+          <label for="monthly">每月定期定額<output id="monthlyOut">NT$ 10,000</output></label>
+          <input type="range" id="monthly" min="0" max="50000" step="1000" value="10000" aria-label="每月投入金額">
+          <label for="years">投資年期<output id="yearsOut">20 年</output></label>
+          <input type="range" id="years" min="1" max="40" step="1" value="20" aria-label="投資年期">
+        </div>
+
+        <!-- 模式二:目標回推 -->
+        <div id="grpGoal" class="hide">
+          <label for="target">我的目標金額<output id="targetOut">NT$ 1,000 萬</output></label>
+          <input type="range" id="target" min="500000" max="50000000" step="500000" value="10000000" aria-label="目標金額">
+          <label style="margin-bottom:2px">我想知道⋯</label>
+          <div class="seg" role="group" aria-label="回推方式">
+            <button type="button" data-solve="monthly" aria-pressed="true">每月該存多少?</button>
+            <button type="button" data-solve="time" aria-pressed="false">要存多久?</button>
+          </div>
+          <div id="grpSolveMonthly">
+            <label for="gyears">預計達成年期<output id="gyearsOut">20 年</output></label>
+            <input type="range" id="gyears" min="1" max="40" step="1" value="20" aria-label="預計達成年期">
+          </div>
+          <div id="grpSolveTime" class="hide">
+            <label for="gbudget">每月可投入(固定結餘)<output id="gbudgetOut">NT$ 10,000</output></label>
+            <input type="range" id="gbudget" min="0" max="100000" step="1000" value="10000" aria-label="每月可投入金額">
+          </div>
+        </div>
+
+        <label for="rate">預估年化報酬率<output id="rateOut">6.0%</output></label>
+        <input type="range" id="rate" min="1" max="15" step="0.5" value="6" aria-label="預估年化報酬率">
+        <div class="rate-hint"><span>定存級 1%</span><span>穩健 6%</span><span>積極 15%</span></div>
+      </div>
+
+      <div class="calc-result reveal">
+        <!-- 模式一結果 -->
+        <div class="result-nums" id="resForward">
+          <div class="box"><span>你總共投入</span><b id="totalIn">NT$ 270 萬</b></div>
+          <div class="box gain"><span>預估資產終值</span><b id="totalOut">NT$ 561 萬</b></div>
+        </div>
+        <!-- 模式二結果 -->
+        <div class="answer hide" id="resGoal">
+          <span id="ansLabel">要達成目標,你每月需要投入</span>
+          <b id="ansValue">NT$ 12,345</b>
+          <span class="sub" id="ansSub"></span>
+        </div>
+        <div class="chart-box">
+          <svg id="chart" viewBox="0 0 600 260" preserveAspectRatio="none" role="img" aria-label="資產成長曲線圖"></svg>
+        </div>
+        <p class="calc-foot">＊以單筆投入加每月定期定額、月複利計算,僅為數學試算,不代表任何商品之實際報酬,投資必有風險。想知道適合你的做法?<a href="#contact" style="color:#F6E3C2">來聊聊</a>。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 流程 -->
+<section id="process">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="tag">PROCESS</span>
+      <h2>合作流程,簡單三步</h2>
+      <p>沒有複雜的話術,每一步你都清楚知道在做什麼。</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <span class="free">免費</span>
+        <h3>聊聊你的狀況</h3>
+        <p>30 分鐘線上或面對面,聊聊你目前的財務狀況和最想解決的煩惱。就是聊天,不用準備什麼。</p>
+      </div>
+      <div class="step reveal">
+        <h3>量身打造計畫</h3>
+        <p>我會根據你的收支、目標與風險承受度,做出一份白話到爸媽都看得懂的專屬財務計畫書。</p>
+      </div>
+      <div class="step reveal">
+        <h3>陪你走下去</h3>
+        <p>計畫不是做完就結束。每季追蹤、隨人生變化調整,有問題隨時 LINE 我,我都在。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 關於我 -->
+<section id="about" style="padding-top:0">
+  <div class="wrap about-grid">
+    <div class="about-photo reveal"><span>(這裡放一張你的生活照)</span></div>
+    <div class="reveal">
+      <div class="sec-head" style="margin-bottom:18px">
+        <span class="tag">ABOUT</span>
+        <h2>為什麼我成為財務顧問</h2>
+      </div>
+      <p>幾年前,我家因為一張看不懂的保單和一筆失敗的投資,差點賠掉爸媽多年的積蓄。那時我才發現:大多數人不是不想理財,是沒有人用他們聽得懂的方式好好說明。</p>
+      <p style="margin-top:14px">所以我考取了 RFC® 國際認證,成為一名財務顧問。正因為我還在第一線深耕的階段,每一位客戶我都花加倍的時間用心對待——你不會是我的第三百個案子,你是我全力以赴的那一個。</p>
+      <div class="creds">
+        <span>RFC® 國際認證財務顧問師</span>
+        <span>持續進修中,清單會越來越長 🌱</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 客戶回饋 -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="tag">VOICES</span>
+      <h2>他們這樣說</h2>
+    </div>
+    <div class="quotes">
+      <div class="quote reveal">
+        <p>本來以為理財顧問都很愛推銷,結果俊誠第一句話就是「你不需要買任何東西」。才半年,我們家的帳本第一次這麼清楚。</p>
+        <div class="who"><div class="ava">陳</div><div><b>陳小姐,34 歲</b><span>雙薪家庭・行政人員</span></div></div>
+      </div>
+      <div class="quote reveal">
+        <p>月薪三萬八也能開始投資,這是俊誠教我的。他把複利講得像故事一樣,我現在每個月都期待對帳單。</p>
+        <div class="who"><div class="ava">張</div><div><b>張先生,27 歲</b><span>社會新鮮人・工程師</span></div></div>
+      </div>
+      <div class="quote reveal">
+        <p>保單健診那次幫我們省下每年快五萬的重複保費,還補上了真正需要的缺口。專業,而且講人話。</p>
+        <div class="who"><div class="ava">王</div><div><b>王太太,45 歲</b><span>自營商・兩個孩子的媽</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center;margin-left:auto;margin-right:auto">
+      <span class="tag">FAQ</span>
+      <h2>你可能想問</h2>
+    </div>
+    <div class="faq reveal">
+      <details>
+        <summary>諮詢真的免費嗎?會不會被推銷?</summary>
+        <div class="a">首次 30 分鐘諮詢完全免費,而且我採顧問費制,不靠銷售商品抽佣,所以沒有推銷的動機。聊完覺得不適合,隨時說再見,完全沒有壓力。</div>
+      </details>
+      <details>
+        <summary>我存款很少、薪水不高,適合找顧問嗎?</summary>
+        <div class="a">非常適合!越早建立正確的金錢習慣,複利的時間就越長。我有很多客戶是從月光族開始的,起點低從來不是問題,不開始才是。</div>
+      </details>
+      <details>
+        <summary>顧問費怎麼收?</summary>
+        <div class="a">依服務內容採固定費用制,在第一次免費諮詢時就會白紙黑字說清楚,絕不會有隱藏費用。單次健檢和年度陪伴方案的價格都會事先報價。</div>
+      </details>
+      <details>
+        <summary>可以線上進行嗎?</summary>
+        <div class="a">可以!全程可透過視訊進行,文件都用雲端共享。全台灣(以及海外)的朋友都能合作,大約六成的客戶我們從沒見過面,但一樣熟得像朋友。</div>
+      </details>
+      <details>
+        <summary>你會幫我操作投資或保管我的錢嗎?</summary>
+        <div class="a">不會,這點很重要:你的錢永遠在你自己的帳戶裡。我的角色是給你計畫、教你方法、陪你執行,所有決定權和資產都在你手上。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- 結尾 CTA -->
+<section class="cta-final" id="contact">
+  <div class="wrap cta-inner reveal">
+    <h2>準備好讓錢替你工作了嗎?</h2>
+    <p>留 30 分鐘給自己,我們聊聊你的財務現況。不用準備、不用緊張,帶著問題來就好。</p>
+    <div class="cta-row">
+      <a class="btn" href="mailto:hello@example.com?subject=預約免費諮詢">📮 寫信預約諮詢</a>
+      <a class="line-btn" href="https://line.me/" target="_blank" rel="noopener">💬 加 LINE 直接聊</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 周俊誠財務規劃工作室</div>
+    <p class="disc">本網站內容僅供教育與參考之用,不構成任何投資、保險或法律建議。投資一定有風險,過去績效不代表未來表現,任何財務決策請依個人狀況審慎評估。</p>
+  </div>
+</footer>
+
+<script>
+// ---------- 複利試算 ----------
+const $ = id => document.getElementById(id);
+const lump=$('lump'), monthly=$('monthly'), years=$('years'), rateEl=$('rate');
+const target=$('target'), gyears=$('gyears'), gbudget=$('gbudget');
+let mode = 'forward';   // forward | goal
+let solve = 'monthly';  // monthly | time
+
+const fmtNT  = n => 'NT$ ' + Math.round(n).toLocaleString('zh-TW');
+const fmtWan = n => {
+  const wan = n / 10000;
+  if (wan >= 10000) return 'NT$ ' + (wan/10000).toFixed(2) + ' 億';
+  return 'NT$ ' + Math.round(wan).toLocaleString('zh-TW') + ' 萬';
+};
+const fmtYM = months => {
+  const y = Math.floor(months/12), m = months%12;
+  return (y? y+' 年':'') + (m? ' '+m+' 個月':'') || '不到 1 個月';
+};
+
+// 產生資產序列(每年一點)
+function buildSeries(L, P, totalMonths){
+  const r = (+rateEl.value)/100/12;
+  const pts=[{m:0, bal:L, paid:L}];
+  let bal=L;
+  for(let m=1;m<=totalMonths;m++){
+    bal=bal*(1+r)+P;
+    if(m%12===0 || m===totalMonths) pts.push({m, bal, paid:L+P*m});
+  }
+  return pts;
+}
+
+// 畫圖(可選目標線)
+function drawChart(pts, targetVal){
+  const W=600,H=260,pad=10;
+  const last=pts[pts.length-1];
+  const maxV=Math.max(last.bal, targetVal||0, 1)*1.08;
+  const x=i=>pad+(W-2*pad)*(i/(pts.length-1||1));
+  const y=v=>H-pad-(H-2*pad)*(v/maxV);
+  let dBal='',dPaid='';
+  pts.forEach((p,i)=>{const c=i===0?'M':'L';
+    dBal+=`${c}${x(i).toFixed(1)},${y(p.bal).toFixed(1)} `;
+    dPaid+=`${c}${x(i).toFixed(1)},${y(p.paid).toFixed(1)} `;});
+  const area=dBal+`L${x(pts.length-1)},${H-pad} L${x(0)},${H-pad} Z`;
+  const tLine = targetVal ? `
+    <line x1="${pad}" y1="${y(targetVal)}" x2="${W-pad}" y2="${y(targetVal)}" stroke="#fff" stroke-width="1.5" stroke-dasharray="4 6" opacity=".7"/>
+    <text x="${W-pad-4}" y="${y(targetVal)-7}" fill="#fff" font-size="12.5" font-family="Noto Sans TC" text-anchor="end" opacity=".9">🎯 目標 ${fmtWan(targetVal)}</text>` : '';
+  $('chart').innerHTML=`
+    <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#D89436" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#D89436" stop-opacity="0"/>
+    </linearGradient></defs>
+    <path d="${area}" fill="url(#g)"/>
+    <path d="${dPaid}" fill="none" stroke="#8FA796" stroke-width="2.5" stroke-dasharray="6 6"/>
+    <path d="${dBal}" fill="none" stroke="#D89436" stroke-width="3.5" stroke-linecap="round"/>
+    <circle cx="${x(pts.length-1)}" cy="${y(last.bal)}" r="6" fill="#fff" stroke="#D89436" stroke-width="3"/>
+    ${tLine}
+    <text x="${pad+4}" y="${y(pts[Math.floor(pts.length/2)].paid)-8}" fill="#9FB3A4" font-size="13" font-family="Noto Sans TC">─ ─ 你投入的錢</text>
+    <text x="${pad+4}" y="${Math.min(y(last.bal)+26,H-14)}" fill="#F2C778" font-size="13" font-family="Noto Sans TC">── 複利後的資產</text>`;
+}
+
+function syncOutputs(){
+  $('lumpOut').textContent=fmtNT(+lump.value);
+  $('monthlyOut').textContent=fmtNT(+monthly.value);
+  $('yearsOut').textContent=years.value+' 年';
+  $('rateOut').textContent=(+rateEl.value).toFixed(1)+'%';
+  $('targetOut').textContent=fmtWan(+target.value);
+  $('gyearsOut').textContent=gyears.value+' 年';
+  $('gbudgetOut').textContent=fmtNT(+gbudget.value);
+}
+
+function draw(){
+  syncOutputs();
+  const L=+lump.value, r=(+rateEl.value)/100/12;
+
+  if(mode==='forward'){
+    const pts=buildSeries(L,+monthly.value,(+years.value)*12);
+    const last=pts[pts.length-1];
+    $('totalIn').textContent=fmtWan(last.paid);
+    $('totalOut').textContent=fmtWan(last.bal);
+    drawChart(pts);
+    return;
+  }
+
+  // ----- 目標回推 -----
+  const T=+target.value;
+
+  if(solve==='monthly'){
+    const n=(+gyears.value)*12;
+    const growth=Math.pow(1+r,n);
+    const fromLump=L*growth;
+    let P=(T-fromLump)*r/(growth-1);
+    if(P<=0){
+      $('ansLabel').textContent='好消息:不用再定期定額!';
+      $('ansValue').textContent='NT$ 0 / 月';
+      $('ansSub').textContent=`你的單筆 ${fmtWan(L)} 在 ${gyears.value} 年後約滾成 ${fmtWan(fromLump)},已超過目標 🎉`;
+      drawChart(buildSeries(L,0,n),T);
+    }else{
+      P=Math.ceil(P/100)*100; // 取整到百元,好記
+      $('ansLabel').textContent=`要在 ${gyears.value} 年內達成 ${fmtWan(T)},你每月需投入`;
+      $('ansValue').textContent=fmtNT(P);
+      $('ansSub').textContent=L>0
+        ? `其中單筆 ${fmtWan(L)} 先幫你打底,約貢獻 ${fmtWan(fromLump)}`
+        : '從零開始也沒問題,時間會是你最好的隊友';
+      drawChart(buildSeries(L,P,n),T);
+    }
+    return;
+  }
+
+  // solve === 'time':已知每月結餘,回推所需時間
+  const P=+gbudget.value;
+  if(L<=0 && P<=0){
+    $('ansLabel').textContent='嗯⋯這樣算不出來 😅';
+    $('ansValue').textContent='請先投入一點點';
+    $('ansSub').textContent='把單筆或每月金額拉起來,複利才有東西可以滾';
+    $('chart').innerHTML='';
+    return;
+  }
+  let bal=L, m=0;
+  const MAX=100*12;
+  while(bal<T && m<MAX){ m++; bal=bal*(1+r)+P; }
+  if(m>=MAX && bal<T){
+    $('ansLabel').textContent='以目前的投入,100 年內達不到目標';
+    $('ansValue').textContent='> 100 年';
+    $('ansSub').textContent='試著提高每月金額、單筆投入,或調整目標金額看看';
+    drawChart(buildSeries(L,P,40*12),T);
+  }else{
+    $('ansLabel').textContent=`達成 ${fmtWan(T)} 的目標,大約需要`;
+    $('ansValue').textContent=fmtYM(m);
+    $('ansSub').textContent=`屆時總投入約 ${fmtWan(L+P*m)},複利幫你補上其餘的 ${fmtWan(T-(L+P*m) > 0 ? T-(L+P*m) : 0)}`;
+    drawChart(buildSeries(L,P,m),T);
+  }
+}
+
+// ----- 模式與切換 -----
+document.querySelectorAll('.calc-tabs .tab').forEach(t=>t.addEventListener('click',()=>{
+  document.querySelectorAll('.calc-tabs .tab').forEach(x=>x.setAttribute('aria-selected','false'));
+  t.setAttribute('aria-selected','true');
+  mode=t.dataset.mode;
+  $('grpForward').classList.toggle('hide', mode!=='forward');
+  $('grpGoal').classList.toggle('hide', mode!=='goal');
+  $('resForward').classList.toggle('hide', mode!=='forward');
+  $('resGoal').classList.toggle('hide', mode!=='goal');
+  draw();
+}));
+document.querySelectorAll('.seg button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.seg button').forEach(x=>x.setAttribute('aria-pressed','false'));
+  b.setAttribute('aria-pressed','true');
+  solve=b.dataset.solve;
+  $('grpSolveMonthly').classList.toggle('hide', solve!=='monthly');
+  $('grpSolveTime').classList.toggle('hide', solve!=='time');
+  draw();
+}));
+[lump,monthly,years,rateEl,target,gyears,gbudget].forEach(el=>el.addEventListener('input',draw));
+draw();
+// ---------- 捲動進場 ----------
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(reduce){
+  document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));
+}else{
+  const io = new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+  }),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+}
+</script>
+</body>
+</html>
