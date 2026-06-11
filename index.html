@@ -230,7 +230,7 @@ input[type=range]::-moz-range-thumb{
 .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
 .about-grid .creds{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px}
 .creds span{font-size:.83rem;background:#fff;border:1px solid var(--line);padding:6px 14px;border-radius:999px;color:var(--pine-2)}
-.about-photo{aspect-ratio:1/1;border-radius:24px;background:linear-gradient(160deg,#E9E0CC,#CBD8C8);display:grid;place-items:center;border:1px solid var(--line);overflow:hidden}
+.about-photo{aspect-ratio:1/1;border-radius:24px;background:linear-gradient(160deg,#E9E0CC,#CBD8C8);display:grid;place-items:center;border:1px solid var(--line);overflow:hidden;position:sticky;top:96px;align-self:start}
 .about-photo span{font-family:var(--serif);font-size:1rem;color:#7C8A7F}
 .about-photo img{width:100%;height:100%;object-fit:cover}
 
@@ -269,6 +269,7 @@ footer .disc{max-width:720px;margin-top:10px;line-height:1.7}
 /* ---------- RWD ---------- */
 @media (max-width:880px){
   .hero-grid,.calc,.about-grid{grid-template-columns:1fr}
+  .about-photo{position:static;top:auto}
   .cards,.steps,.quotes{grid-template-columns:1fr}
   .trust-grid{grid-template-columns:repeat(2,1fr);gap:24px 12px}
   .nav-links{display:none}
@@ -482,7 +483,7 @@ footer .disc{max-width:720px;margin-top:10px;line-height:1.7}
 <section id="about" style="padding-top:0">
   <div class="wrap about-grid">
     <!-- ★ 你的生活照放這裡:把下面的 photo-life.jpg 改成你的照片檔名 ★ -->
-    <div class="about-photo reveal"><img src="picture.png" alt="周俊誠生活照"></div>
+    <div class="about-photo reveal"><img src="name_card.jpg" alt="周俊誠生活照"></div>
     <div class="reveal">
       <div class="sec-head" style="margin-bottom:18px">
         <span class="tag">ABOUT</span>
