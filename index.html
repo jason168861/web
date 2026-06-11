@@ -230,9 +230,15 @@ input[type=range]::-moz-range-thumb{
 .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
 .about-grid .creds{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px}
 .creds span{font-size:.83rem;background:#fff;border:1px solid var(--line);padding:6px 14px;border-radius:999px;color:var(--pine-2)}
-.about-photo{aspect-ratio:5/3;border-radius:24px;background:linear-gradient(160deg,#E9E0CC,#CBD8C8);display:grid;place-items:center;border:1px solid var(--line);overflow:hidden;position:sticky;top:96px;align-self:start}
+css.about-photo{
+  /* 刪掉 aspect-ratio:5/3; 也刪掉那行 background 漸層 */
+  border-radius:24px;
+  border:1px solid var(--line);
+  overflow:hidden;
+  position:sticky; top:96px; align-self:start;
+}
 .about-photo span{font-family:var(--serif);font-size:1rem;color:#7C8A7F}
-.about-photo img{width:100%;height:100%;object-fit:contain}
+.about-photo img{ width:100%; height:auto; display:block; }
 
 /* ---------- About 金句與服務附註 ---------- */
 .pull-quote{
