@@ -86,9 +86,11 @@
   }
   stage.addEventListener('pointerdown',e=>{
     if(!isMobile()) return;
-    const onGrip = !!(e.target.closest && e.target.closest('#stageDrag'));
+    if(stage.classList.contains('is-zoomed')) return;   // 放大模式不拖曳(留給捲動看圖)
     const peeking = stage.classList.contains('is-peek');
-    if(!onGrip && !peeking) return;   // 完整顯示時只有把手能拖,其餘留給圖表/勾選
+    const inChart = !!(e.target.closest && e.target.closest('.chart-box'));
+    if(inChart && !peeking) return;   // 完整顯示時,圖表區留給圖表互動;其餘 result-stage 內皆可拖曳
+    const onGrip = !!(e.target.closest && e.target.closest('#stageDrag'));
     dragging=true; moved=false; pid=e.pointerId; startedOnGrip=onGrip;
     const r=stage.getBoundingClientRect();
     ox=r.left; oy=r.top; sx=e.clientX; sy=e.clientY;
@@ -104,11 +106,17 @@
   // 鍵盤 Enter/Space 也能重置
   handle.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); resetFloat(); }});
 
-  // 打叉:回到原位(置頂吸附)
+  // 打叉:收到右側(子母畫面,點一下可再展開);桌機版維持回到原位
   const closeBtn=document.getElementById('stageClose');
   if(closeBtn){
     closeBtn.addEventListener('pointerdown',e=>e.stopPropagation());  // 不要觸發卡片拖曳
-    closeBtn.addEventListener('click',e=>{ e.stopPropagation(); if(stage.classList.contains('is-zoomed')) exitZoom(); resetFloat(); });
+    closeBtn.addEventListener('click',e=>{
+      e.stopPropagation();
+      if(stage.classList.contains('is-zoomed')) exitZoom();
+      if(!isMobile()){ resetFloat(); return; }
+      ensureFloat(stage.getBoundingClientRect());   // 若還在吸附狀態,先脫離為浮動
+      tuck('right');                                 // 收到畫面右側,留 PEEK 可點回
+    });
   }
 
   // ---- 放大 / 縮小 浮動視窗 ----
