@@ -12,7 +12,7 @@ let showReal = false, showPaid = true;
 
 // ---- 欄位設定（正向模式） ----
 const FWD = [
- {k:'principal',name:'起始本金',min:0,max:5000000,step:10000,unit:'元',kind:'money',hint:'現在手上、準備一次投入的錢'},
+ {k:'principal',name:'起始本金',min:0,max:50000000,step:10000,unit:'元',kind:'money',hint:'現在手上、準備一次投入的錢'},
  {k:'monthly',  name:'每月投入',min:0,max:100000, step:1000, unit:'元',kind:'money',hint:'每個月固定投入的金額(定期定額)'},
  {k:'years',    name:'投資年期',min:1,max:50,     step:1,    unit:'年',kind:'plain',hint:'這筆錢預計持續滾多少年'},
  {k:'rate',     name:'預估年化報酬率',min:0,max:20,step:0.5, unit:'%',kind:'rate', hint:'長期平均年報酬。全球股市約 6–8%,定存約 1–2%',rateHint:['定存 1%','穩健 6%','積極 15%']},
@@ -27,7 +27,7 @@ const ADV = [
 
 // ---- 欄位設定（目標模式） ----
 const GOAL = [
- {k:'principal',name:'起始本金',min:0,max:5000000,step:10000,unit:'元',kind:'money',hint:'現在手上、準備一次投入的錢',store:F},
+ {k:'principal',name:'起始本金',min:0,max:50000000,step:10000,unit:'元',kind:'money',hint:'現在手上、準備一次投入的錢',store:F},
  {k:'target',   name:'我的目標金額',min:100000,max:100000000,step:100000,unit:'元',kind:'money',hint:'你想累積到的總資產',store:G},
 ];
 
