@@ -404,12 +404,16 @@ footer .disc{max-width:720px;margin-top:10px;line-height:1.7}
 
 /* 單一欄位 */
 .field{margin-bottom:13px}
-.field-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
+.field-top{display:flex;align-items:center;justify-content:space-between;gap:10px;row-gap:6px;flex-wrap:wrap;margin-bottom:8px}
+/* 大數字不被截斷:輸入框可隨內容成長、整列必要時換行 */
+.field-box{max-width:100%}
+.field-name{min-width:0}
 .field-name{font-size:.92rem;color:#DCE4DA;display:flex;align-items:center;gap:7px}
-.field-name .info{
+.field-name .info,.cf-label .info{
   width:16px;height:16px;border-radius:50%;border:1px solid rgba(255,255,255,.4);
   font-size:.66rem;color:#B9C6BB;display:inline-grid;place-items:center;cursor:help;flex:none;line-height:1;
 }
+.info:focus-visible{outline:2px solid var(--honey);outline-offset:2px}
 /* 數值輸入框(滑桿模式與輸入模式共用,永遠可點擊輸入) */
 .field-box{display:inline-flex;align-items:center;gap:2px;background:rgba(255,255,255,.06);
   border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:4px 8px;transition:border-color .2s,background .2s}
@@ -422,7 +426,29 @@ footer .disc{max-width:720px;margin-top:10px;line-height:1.7}
 .field-val::-webkit-outer-spin-button,.field-val::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
 .field-box .unit{font-size:.8rem;color:#B9C6BB;padding-left:1px}
 .field-slider{margin-top:2px}
-.rate-hint{display:flex;justify-content:space-between;font-size:.72rem;color:#9FAFA2;margin-top:5px}
+.rate-hint{position:relative;height:1.1em;font-size:.72rem;color:#9FAFA2;margin-top:6px}
+.rate-hint span{position:absolute;top:0;white-space:nowrap}
+
+/* 複利頻率選擇 */
+.compound-freq{margin-top:14px}
+.compound-freq .cf-label{display:flex;align-items:center;gap:7px;font-size:.92rem;color:#DCE4DA;margin-bottom:7px}
+.compound-freq .seg button{padding:9px 6px;font-size:.85rem}
+
+/* 精確數字 / 概數 切換鈕（沿用 chart-tools 風格） */
+.num-toggle{display:inline-flex;align-items:center;gap:6px;
+  border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.06);color:#DCE4DA;
+  font-family:var(--sans);font-size:.8rem;font-weight:500;padding:7px 13px;border-radius:999px;
+  cursor:pointer;transition:background .2s,border-color .2s,color .2s,transform .12s}
+.num-toggle:hover{background:rgba(255,255,255,.12);transform:translateY(-1px)}
+.num-toggle[aria-pressed="true"]{background:rgba(216,148,54,.18);border-color:rgba(216,148,54,.55);color:#F2C778}
+
+/* 自訂提示框：跟隨鼠標、固定在右上方，不被游標擋住 */
+.info-tip{position:fixed;z-index:9999;pointer-events:none;max-width:240px;
+  background:rgba(13,30,24,.97);border:1px solid rgba(216,148,54,.5);border-radius:10px;
+  padding:9px 12px;font-size:.78rem;line-height:1.55;color:#EFEAE0;
+  box-shadow:0 10px 26px -8px rgba(0,0,0,.65);
+  opacity:0;visibility:hidden;transition:opacity .12s}
+.info-tip.on{opacity:1;visibility:visible}
 
 /* 輸入模式:隱藏滑桿,欄位排成兩欄,輸入框加大 + 步進鈕 */
 .calc-panel[data-io="input"] .field-slider{display:none}
@@ -431,6 +457,9 @@ footer .disc{max-width:720px;margin-top:10px;line-height:1.7}
 .calc-panel[data-io="input"] #goalFields,
 .calc-panel[data-io="input"] #advFields{display:grid;grid-template-columns:1fr 1fr;gap:12px 16px}
 .calc-panel[data-io="input"] .field{margin-bottom:4px}
+/* 金額欄位位數多，輸入模式下跨整列，避免大數字在窄格子裡被截斷 */
+.calc-panel[data-io="input"] .field-money{grid-column:1 / -1}
+.calc-panel[data-io="input"] .field-money .field-val{font-variant-numeric:tabular-nums}
 .calc-panel[data-io="input"] .field-top{flex-direction:column;align-items:flex-start;gap:6px}
 .calc-panel[data-io="input"] .field-box{width:100%;justify-content:space-between;padding:9px 12px}
 .calc-panel[data-io="input"] .field-val{width:100%;flex:1;text-align:left;font-size:1.05rem}

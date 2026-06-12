@@ -3,7 +3,7 @@
 // ===================================================================
 
 // ---- 可變狀態 ----
-const F = { principal:300000, monthly:10000, years:20, rate:6, stepUp:0, inflation:2, fee:0 };
+const F = { principal:300000, monthly:10000, years:20, rate:6, stepUp:0, inflation:2, fee:0, compound:12 };
 const G = { target:10000000, gyears:20, gbudget:10000, solve:'monthly' };
 let mode   = 'forward';   // forward | goal
 let ioMode = 'slider';    // slider | input

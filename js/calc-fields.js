@@ -17,10 +17,16 @@ function parseFieldVal(f,s){
 function fieldHTML(f,v){
   const pre = f.kind==='money' ? '<span class="pre">NT$</span>' : '';
   const im  = f.kind==='money' ? 'inputmode="numeric"' : 'inputmode="decimal"';
-  const hint = f.hint ? '<span class="info" title="'+f.hint+'">?</span>' : '';
+  const hint = f.hint ? '<span class="info" tabindex="0" role="img" aria-label="'+f.hint+'" data-tip="'+f.hint+'">?</span>' : '';
+  // 提示標籤依「實際數值」對齊滑桿位置(translateX 隨百分比平移,邊緣不溢出、中段置中)
   const rh = (f.rateHint)
-    ? '<div class="rate-hint">'+f.rateHint.map(t=>'<span>'+t+'</span>').join('')+'</div>' : '';
-  return '<div class="field" data-k="'+f.k+'">'
+    ? '<div class="rate-hint">'+f.rateHint.map(t=>{
+        const mm=String(t).match(/([\d.]+)\s*%/);
+        const val=mm?parseFloat(mm[1]):null;
+        const pct=val!=null?clamp((val-f.min)/(f.max-f.min)*100,0,100):0;
+        return '<span style="left:'+pct.toFixed(1)+'%;transform:translateX(-'+pct.toFixed(1)+'%)">'+t+'</span>';
+      }).join('')+'</div>' : '';
+  return '<div class="field field-'+f.kind+'" data-k="'+f.k+'">'
     +'<div class="field-top">'
       +'<span class="field-name">'+f.name+hint+'</span>'
       +'<div class="field-box">'+pre
@@ -39,7 +45,8 @@ function fitNumInput(inp){
   const panel=document.getElementById('calcPanel');
   if(panel && panel.getAttribute('data-io')==='input'){ inp.style.width=''; return; }
   const len=(inp.value||'').length;
-  inp.style.width=Math.min(13,Math.max(5,len+1.2)).toFixed(1)+'ch';
+  // 上限放寬，確保大數字（如 100,000,000）在電腦版滑桿模式不會被截斷
+  inp.style.width=Math.min(16,Math.max(5,len+1.2)).toFixed(1)+'ch';
 }
 function refitAllInputs(){
   document.querySelectorAll('#calcPanel .field-val').forEach(fitNumInput);

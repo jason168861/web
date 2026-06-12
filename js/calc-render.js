@@ -29,7 +29,7 @@ function render(){
 }
 
 function renderForward(){
-  const d=simulate(F.principal,F.monthly,F.years,F.rate,F.stepUp,F.fee,F.inflation,events);
+  const d=simulate(F.principal,F.monthly,F.years,F.rate,F.stepUp,F.fee,F.inflation,F.compound,events);
 
   // 大數字
   $('totalOut').textContent=fmtWan(d.finalBal);
@@ -75,8 +75,8 @@ function renderForward(){
   // 拖延的代價
   const dc=$('delayCost');
   if(F.years>5){
-    const late=simulate(F.principal,F.monthly,F.years-5,F.rate,F.stepUp,F.fee,F.inflation,[]);
-    const now =simulate(F.principal,F.monthly,F.years,  F.rate,F.stepUp,F.fee,F.inflation,[]);
+    const late=simulate(F.principal,F.monthly,F.years-5,F.rate,F.stepUp,F.fee,F.inflation,F.compound,[]);
+    const now =simulate(F.principal,F.monthly,F.years,  F.rate,F.stepUp,F.fee,F.inflation,F.compound,[]);
     const gap=now.finalBal-late.finalBal;
     if(gap>0){
       $('delayText').innerHTML='同樣的計畫,<b>晚 5 年</b>才開始,最後會少滾出 <b>'+fmtWan(gap)+'</b>。對複利來說,時間比金額更值錢。';
@@ -90,7 +90,8 @@ function renderForward(){
 
 function renderGoal(){
   const L=F.principal, T=G.target;
-  const r=(F.rate-F.fee)/100/12;
+  // 有效月利率：滾滿一年剛好等於輸入的年化報酬率(目標模式採逐月複利的封閉解)
+  const r=Math.pow(1+(F.rate-F.fee)/100,1/12)-1;
   let series, P=0, months=0, txtLabel='', txtValue='', txtSub='';
 
   if(G.solve==='monthly'){
@@ -181,6 +182,46 @@ buildFields($('goalFields'),GOAL);
 buildGoalExtra();
 renderEvents();
 applyMode();
+
+// ---- 複利頻率切換（每月 / 每季 / 每半年 / 每年）----
+document.querySelectorAll('#compoundFreq button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('#compoundFreq button').forEach(x=>x.setAttribute('aria-pressed','false'));
+  b.setAttribute('aria-pressed','true'); F.compound=+b.dataset.cm; render();
+}));
+
+// ---- 精確數字 / 概數 切換 ----
+const numToggle=$('numToggle');
+if(numToggle) numToggle.addEventListener('click',()=>{
+  showExact=!showExact;
+  numToggle.setAttribute('aria-pressed', showExact?'true':'false');
+  numToggle.textContent = showExact ? '🔢 概數顯示' : '🔢 精確數字';
+  render();
+});
+
+// ---- 自訂提示框（class="info"）：跟隨鼠標、顯示在右上方，不被游標擋住 ----
+(function(){
+  const tip=document.createElement('div'); tip.className='info-tip'; tip.setAttribute('role','tooltip');
+  document.body.appendChild(tip);
+  let active=null;
+  const place=(x,y)=>{
+    tip.style.left=x+'px';
+    tip.style.top =y+'px';
+    // 預設右上方;若超出視窗右緣或上緣則自動翻面
+    const r=tip.getBoundingClientRect();
+    let nx=x+14, ny=y-r.height-12;
+    if(nx+r.width>innerWidth-8) nx=x-r.width-14;
+    if(ny<8) ny=y+18;
+    tip.style.left=nx+'px'; tip.style.top=ny+'px';
+  };
+  const show=el=>{ active=el; tip.textContent=el.getAttribute('data-tip')||''; tip.classList.add('on'); };
+  const hide=()=>{ active=null; tip.classList.remove('on'); };
+  document.addEventListener('pointerover',e=>{ const el=e.target.closest('.info[data-tip]'); if(el){ show(el); place(e.clientX,e.clientY); } });
+  document.addEventListener('pointermove',e=>{ if(active && e.target.closest('.info[data-tip]')===active) place(e.clientX,e.clientY); });
+  document.addEventListener('pointerout',e=>{ if(active && e.target.closest('.info[data-tip]')===active) hide(); });
+  // 鍵盤聚焦也顯示(無障礙):顯示在元素右上角
+  document.addEventListener('focusin',e=>{ const el=e.target.closest&&e.target.closest('.info[data-tip]'); if(el){ const r=el.getBoundingClientRect(); show(el); place(r.right,r.top); } });
+  document.addEventListener('focusout',()=>{ if(active) hide(); });
+})();
 // ---------- 捲動進場 ----------
 if(reduce){
   document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));
