@@ -192,15 +192,59 @@ input[type=range]::-moz-range-thumb{
 .step .free{position:absolute;top:24px;right:24px;font-size:.75rem;background:var(--honey-soft);color:#8A5E14;padding:4px 12px;border-radius:999px;font-weight:700}
 
 /* ---------- 客戶回饋 ---------- */
-.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.quote{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;display:flex;flex-direction:column;gap:16px}
-.quote p{font-size:.95rem;color:#3E4A43;flex:1}
-.quote p::before{content:"「"}
-.quote p::after{content:"」"}
-.quote .who{display:flex;align-items:center;gap:12px}
-.quote .ava{width:42px;height:42px;border-radius:50%;background:var(--sage);color:#fff;display:grid;place-items:center;font-family:var(--serif);flex:none}
+/* 客戶回饋輪播 */
+.quotes-wrap{position:relative}
+.quotes{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;-webkit-overflow-scrolling:touch;
+  padding:10px 4px 6px;margin:-10px -4px -6px;scrollbar-width:none}
+.quotes::-webkit-scrollbar{display:none}
+.quotes:focus-visible{outline:2px solid var(--sage);outline-offset:4px;border-radius:var(--radius)}
+
+/* 卡片：襯紙漸層 + 浮雕引號 + 柔和陰影 + hover 微浮起 */
+.quote{position:relative;flex:0 0 calc((100% - 48px)/3);scroll-snap-align:start;
+  background:linear-gradient(180deg,#fff 0%,#FCFAF4 100%);
+  border:1px solid var(--line);border-radius:20px;padding:32px 30px 26px;
+  display:flex;flex-direction:column;gap:15px;overflow:hidden;
+  box-shadow:0 1px 2px rgba(22,56,46,.04),0 18px 38px -28px rgba(22,56,46,.30);
+  transition:transform .28s cubic-bezier(.2,.7,.2,1),box-shadow .28s,border-color .28s}
+.quote::before{content:"\201C";position:absolute;top:2px;right:20px;z-index:0;
+  font-family:var(--num);font-weight:650;font-size:5.5rem;line-height:1;color:var(--honey);opacity:.14;pointer-events:none}
+.quote::after{content:"";position:absolute;left:0;top:0;width:100%;height:3px;
+  background:linear-gradient(90deg,var(--sage),var(--honey));opacity:0;transition:opacity .28s}
+.quote:hover{transform:translateY(-5px);border-color:#D8CDB4;
+  box-shadow:0 2px 4px rgba(22,56,46,.05),0 28px 52px -24px rgba(22,56,46,.42)}
+.quote:hover::after{opacity:.9}
+.quote .stars{position:relative;z-index:1;color:var(--honey);font-size:.95rem;letter-spacing:3px;line-height:1}
+.quote p{position:relative;z-index:1;font-family:var(--serif);font-size:1rem;line-height:1.85;color:#384640;flex:1;letter-spacing:.01em}
+.quote .who{display:flex;align-items:center;gap:13px;padding-top:16px;margin-top:2px;border-top:1px solid var(--line)}
+.quote .ava{width:46px;height:46px;border-radius:50%;flex:none;
+  background:linear-gradient(135deg,var(--sage),var(--pine-2));color:#fff;
+  display:grid;place-items:center;font-family:var(--serif);font-size:1.12rem;
+  box-shadow:0 0 0 3px rgba(127,160,138,.18)}
 .quote .who b{font-size:.92rem;color:var(--pine);display:block;line-height:1.4}
 .quote .who span{font-size:.8rem;color:#74807A}
+
+/* 左右導覽鈕：霧面玻璃質感 */
+.q-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:4;
+  width:46px;height:46px;border-radius:50%;border:1px solid rgba(227,218,198,.9);
+  background:rgba(255,255,255,.72);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  color:var(--pine);font-size:1.5rem;line-height:1;cursor:pointer;display:grid;place-items:center;
+  box-shadow:0 10px 26px -10px rgba(22,56,46,.35);
+  transition:background .2s,color .2s,transform .2s,box-shadow .2s,opacity .2s}
+.q-nav:hover{background:var(--pine);color:#fff;border-color:var(--pine);
+  transform:translateY(-50%) scale(1.07);box-shadow:0 14px 30px -10px rgba(22,56,46,.5)}
+.q-nav:active{transform:translateY(-50%) scale(.96)}
+.q-nav.prev{left:-14px}
+.q-nav.next{right:-14px}
+.q-nav[hidden]{display:none}
+
+/* 藥丸狀圓點，當前頁拉長 */
+.q-dots{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:22px}
+.q-dots button{width:8px;height:8px;padding:0;border:none;border-radius:99px;cursor:pointer;
+  background:#D8CFBC;transition:background .25s,width .25s}
+.q-dots button:hover{background:var(--sage)}
+.q-dots button[aria-selected="true"]{width:26px;background:var(--honey)}
+.q-dots[hidden]{display:none}
 
 /* ---------- FAQ ---------- */
 .faq{max-width:760px;margin:0 auto}
@@ -263,7 +307,8 @@ footer .disc{max-width:720px;margin-top:10px;line-height:1.7}
 @media (max-width:880px){
   .hero-grid,.calc,.about-grid{grid-template-columns:1fr}
   .about-photo{position:static;top:auto}
-  .cards,.steps,.quotes{grid-template-columns:1fr}
+  .cards,.steps{grid-template-columns:1fr}
+  .quote{flex-basis:calc((100% - 22px)/2)}   /* 平板:一頁 2 則 */
   .trust-grid{grid-template-columns:repeat(2,1fr);gap:24px 12px}
   .nav-links{display:none}
   .portrait{order:-1}
@@ -353,6 +398,8 @@ footer .disc{max-width:720px;margin-top:10px;line-height:1.7}
 @media (max-width:560px){
   .quiz-card{padding:30px 22px}
   .quiz-detail{grid-template-columns:1fr}
+  .quote{flex-basis:100%}        /* 手機:一頁 1 則 */
+  .q-nav{display:none}           /* 改用滑動 + 圓點 */
 }
 
 /* 浮動諮詢按鈕 */

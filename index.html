@@ -312,20 +312,53 @@
       <span class="tag">VOICES</span>
       <h2>他們這樣說</h2>
     </div>
-    <div class="quotes">
-      <div class="quote reveal">
-        <p>本來以為理財顧問都會急著推商品，結果俊誠第一句話是「先說說你現在最煩惱的是什麼」。才半年，我們家的帳本第一次這麼清楚。</p>
-        <div class="who"><div class="ava">陳</div><div><b>陳小姐，34 歲</b><span>雙薪家庭・行政人員</span></div></div>
+    <div class="quotes-wrap reveal">
+      <button class="q-nav prev" type="button" aria-label="上一組評論">‹</button>
+      <div class="quotes" id="quotesTrack" tabindex="0" role="group" aria-roledescription="輪播" aria-label="客戶評論">
+        <div class="quote">
+          <div class="stars" aria-label="五星好評">★★★★★</div>
+          <p>本來以為理財顧問都會急著推商品，結果俊誠第一句話是「先說說你現在最煩惱的是什麼」。才半年，我們家的帳本第一次這麼清楚。</p>
+          <div class="who"><div class="ava">陳</div><div><b>陳小姐，34 歲</b><span>雙薪家庭・行政人員</span></div></div>
+        </div>
+        <div class="quote">
+          <div class="stars" aria-label="五星好評">★★★★★</div>
+          <p>月薪三萬八也能開始投資，這是俊誠教我的。他把複利講得像故事一樣，我現在每個月都期待對帳單。</p>
+          <div class="who"><div class="ava">張</div><div><b>張先生，27 歲</b><span>社會新鮮人・工程師</span></div></div>
+        </div>
+        <div class="quote">
+          <div class="stars" aria-label="五星好評">★★★★★</div>
+          <p>保單健診那次幫我們省下每年快五萬的重複保費，還補上了真正需要的缺口。專業，而且講人話。</p>
+          <div class="who"><div class="ava">王</div><div><b>王太太，45 歲</b><span>自營商・兩個孩子的媽</span></div></div>
+        </div>
+        <div class="quote">
+          <div class="stars" aria-label="五星好評">★★★★★</div>
+          <p>原本買房頭期款一直存不夠，俊誠幫我把目標拆成每個月的小進度，還把現金和投資分開規劃。三年後我真的拿到鑰匙了。</p>
+          <div class="who"><div class="ava">林</div><div><b>林先生，38 歲</b><span>中階主管・首購族</span></div></div>
+        </div>
+        <div class="quote">
+          <div class="stars" aria-label="五星好評">★★★★★</div>
+          <p>接案收入時高時低，以前完全不敢想退休。他教我用「先付給自己」的方式存錢，現在帳戶有了緩衝，心也踏實多了。</p>
+          <div class="who"><div class="ava">黃</div><div><b>黃小姐，31 歲</b><span>自由工作者・設計師</span></div></div>
+        </div>
+        <div class="quote">
+          <div class="stars" aria-label="五星好評">★★★★★</div>
+          <p>退休前最怕被話術，俊誠反而幫我把名下保單和基金一筆筆攤開檢視，留下真正需要的。談的是我的人生，不是他的業績。</p>
+          <div class="who"><div class="ava">吳</div><div><b>吳先生，52 歲</b><span>製造業・準退休族</span></div></div>
+        </div>
+        <div class="quote">
+          <div class="stars" aria-label="五星好評">★★★★★</div>
+          <p>值大夜班沒時間理財，他把流程簡化到我每個月只要確認一次。從每月三千開始，現在看到累積的數字真的會上癮。</p>
+          <div class="who"><div class="ava">蔡</div><div><b>蔡小姐，29 歲</b><span>醫護人員・小資族</span></div></div>
+        </div>
+        <div class="quote">
+          <div class="stars" aria-label="五星好評">★★★★★</div>
+          <p>自己亂買一通好幾年，績效還是普通。經過他重新配置與每季追蹤，配置變清楚了，遇到大跌也比較不慌，知道自己在做什麼。</p>
+          <div class="who"><div class="ava">鄭</div><div><b>鄭先生，41 歲</b><span>科技業・雙寶爸</span></div></div>
+        </div>
       </div>
-      <div class="quote reveal">
-        <p>月薪三萬八也能開始投資，這是俊誠教我的。他把複利講得像故事一樣，我現在每個月都期待對帳單。</p>
-        <div class="who"><div class="ava">張</div><div><b>張先生，27 歲</b><span>社會新鮮人・工程師</span></div></div>
-      </div>
-      <div class="quote reveal">
-        <p>保單健診那次幫我們省下每年快五萬的重複保費，還補上了真正需要的缺口。專業，而且講人話。</p>
-        <div class="who"><div class="ava">王</div><div><b>王太太，45 歲</b><span>自營商・兩個孩子的媽</span></div></div>
-      </div>
+      <button class="q-nav next" type="button" aria-label="下一組評論">›</button>
     </div>
+    <div class="q-dots" id="quotesDots" role="tablist" aria-label="評論分頁"></div>
   </div>
 </section>
 
@@ -401,6 +434,7 @@
 <script src="js/calc-render.js"></script>
 <!-- ── 其他區塊 ── -->
 <script src="js/quiz.js"></script>
+<script src="js/quotes.js"></script>
 <script src="js/site.js"></script>
 <script src="js/stage-drag.js"></script>
 </body>
