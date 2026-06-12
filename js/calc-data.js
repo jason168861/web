@@ -28,7 +28,7 @@ const ADV = [
 // ---- 欄位設定（目標模式） ----
 const GOAL = [
  {k:'principal',name:'起始本金',min:0,max:5000000,step:10000,unit:'元',kind:'money',hint:'現在手上、準備一次投入的錢',store:F},
- {k:'target',   name:'我的目標金額',min:500000,max:100000000,step:500000,unit:'元',kind:'money',hint:'你想累積到的總資產',store:G},
+ {k:'target',   name:'我的目標金額',min:100000,max:100000000,step:100000,unit:'元',kind:'money',hint:'你想累積到的總資產',store:G},
 ];
 
 // ---- 人生事件快捷鍵 ----
