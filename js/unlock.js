@@ -10,7 +10,7 @@
   const LOCK_ENABLED=true;
 
   const KEY='calcFeatUnlocked';
-  const CODE='0000';   // ← 解鎖碼：請與 LINE 官方帳號「歡迎訊息」中的代碼一致
+  const CODE='0304';   // ← 解鎖碼：請與 LINE 官方帳號「歡迎訊息」中的代碼一致
   const LINE='https://line.me/R/ti/p/@453ubihw';
 
   const norm=s=>String(s||'').trim().toUpperCase();
