@@ -8,23 +8,22 @@
   const handle=document.getElementById('stageDrag');
   if(!stage||!handle) return;
   const isMobile=()=>matchMedia('(max-width:880px)').matches;
+  const resultsReady=()=>!stage.closest('.calc-grid')?.classList.contains('result-pending');
   const cl=(v,a,b)=>Math.max(a,Math.min(b,v));
   const PEEK=42;            // 收到側邊時保留可見的寬度
-  let placeholder=null, dragging=false, moved=false, sx=0, sy=0, ox=0, oy=0, pid=null, startedOnGrip=false, lastTap=0;
+  const dockTop=()=>window.innerWidth<=560 ? 60 : 64;
+  let dragging=false, moved=false, sx=0, sy=0, ox=0, oy=0, pid=null, startedOnGrip=false, lastTap=0, didDefaultPeek=false;
   const W=()=>stage.offsetWidth;
 
-  // sticky -> fixed:先脫離文件流再補等高佔位,中間不觸發 reflow,避免捲動跳動
+  // sticky -> fixed:直接脫離文件流,不補佔位,避免輸入區上方留下空白
   function ensureFloat(r){
     if(stage.classList.contains('is-floating')) return;
-    placeholder=document.createElement('div');
-    placeholder.style.cssText='order:1;flex:0 0 auto;height:'+Math.round(r.height)+'px;margin:0 0 16px';
     stage.classList.add('is-floating');
     stage.style.position='fixed';
     stage.style.left=Math.round(r.left)+'px';
     stage.style.top =Math.round(r.top)+'px';
     stage.style.width=Math.round(r.width)+'px';
     stage.style.margin='0';
-    stage.parentNode.insertBefore(placeholder, stage);
   }
   function moveTo(left,top){
     const w=W();
@@ -37,6 +36,13 @@
     clearPeek();
     stage.classList.add('is-peek','peek-'+side);
     stage.style.left=(side==='left' ? -(W()-PEEK) : window.innerWidth-PEEK)+'px';
+  }
+  function defaultPeekRight(){
+    if(!isMobile() || !resultsReady() || didDefaultPeek || stage.classList.contains('is-floating') || stage.classList.contains('is-zoomed')) return;
+    ensureFloat(stage.getBoundingClientRect());
+    stage.style.top=dockTop()+'px';
+    tuck('right');
+    didDefaultPeek=true;
   }
   function settle(){
     const r=stage.getBoundingClientRect(), vw=window.innerWidth, w=r.width;
@@ -55,7 +61,6 @@
     clearPeek();
     stage.classList.remove('is-floating','is-hidden');
     stage.style.position=stage.style.left=stage.style.top=stage.style.width=stage.style.margin='';
-    if(placeholder){ placeholder.remove(); placeholder=null; }
   }
 
   function onMove(e){
@@ -156,10 +161,12 @@
   const watch=document.getElementById('calcPanel');
   if(watch){
     new IntersectionObserver(es=>es.forEach(en=>{
+      if(en.isIntersecting) defaultPeekRight();
       if(!stage.classList.contains('is-floating')) return;
       stage.classList.toggle('is-hidden', !en.isIntersecting);
     }),{threshold:0}).observe(watch);
   }
+  window.addEventListener('calc-results-revealed',()=>requestAnimationFrame(defaultPeekRight));
   // 切回桌機版時清除浮動/放大狀態
   window.addEventListener('resize',()=>{ if(!isMobile()){ exitZoom(); resetFloat(); } });
 })();

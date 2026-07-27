@@ -235,7 +235,7 @@ function buildExportSVG(){
 
   // ---- 頁首 ----
   body += seedIconSVG(M, 36, 30);
-  body += '<text x="' + (M + 42) + '" y="62" font-size="24" font-weight="700" fill="#16382E">周俊誠｜你的家庭財務夥伴</text>';
+  body += '<text x="' + (M + 42) + '" y="62" font-size="24" font-weight="700" fill="#16382E">享退休｜你的家庭財務夥伴</text>';
   body += '<text x="' + (W - M) + '" y="58" font-size="15" fill="#74807A" text-anchor="end">' + escXml(today) + '</text>';
   body += '<text x="' + M + '" y="118" font-size="40" font-weight="700" fill="#16382E">' + (isFwd ? '複利試算結果' : '目標試算結果') + '</text>';
   body += '<text x="' + M + '" y="150" font-size="19" fill="#74807A">' + (isFwd ? '我能滾出多少？' : '目標怎麼達成？') + '</text>';
@@ -297,7 +297,7 @@ function buildExportSVG(){
   fy += 30;
   body += '<text x="' + M + '" y="' + fy + '" font-size="13" fill="#9AA39C">＊本圖為月複利數學試算，僅供參考，不代表任何商品之實際報酬，投資必有風險。</text>';
   fy += 26;
-  body += '<text x="' + M + '" y="' + fy + '" font-size="14" fill="#23553F">周俊誠 ・ RFC® 國際認證財務顧問師　│　LINE：@453ubihw　│　先找問題，才給工具</text>';
+  body += '<text x="' + M + '" y="' + fy + '" font-size="14" fill="#23553F">享退休 ・ RFC® 國際認證財務顧問師　│　LINE：@453ubihw　│　先找問題，才給工具</text>';
   const H = fy + 30;
 
   const svg =

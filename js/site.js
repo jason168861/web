@@ -65,4 +65,16 @@ const spy=new IntersectionObserver(es=>es.forEach(e=>{
     if(navMap[e.target.id])navMap[e.target.id].classList.add('active');
   }
 }),{rootMargin:'-45% 0px -50% 0px',threshold:0});
-['services','calc','quiz','process','about','faq'].forEach(id=>{const el=$(id);if(el)spy.observe(el);});
+['pain','method','stories','services','tools','money-faq','about','booking-faq','contact'].forEach(id=>{const el=$(id);if(el)spy.observe(el);});
+
+// 右上角網站架構選單：點章節或點外部時收起
+const siteMapMenu=document.querySelector('.site-map-menu');
+if(siteMapMenu){
+  siteMapMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{ siteMapMenu.open=false; }));
+  document.addEventListener('click',e=>{
+    if(siteMapMenu.open && !siteMapMenu.contains(e.target)) siteMapMenu.open=false;
+  });
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape') siteMapMenu.open=false;
+  });
+}

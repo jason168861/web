@@ -23,6 +23,12 @@ function renderTable(d){
 
 
 // ---- 主渲染 ----
+function revealCalcResults(){
+  const grid=document.querySelector('.calc-grid');
+  if(!grid || !grid.classList.contains('result-pending')) return;
+  grid.classList.remove('result-pending');
+  window.dispatchEvent(new CustomEvent('calc-results-revealed'));
+}
 function render(){
   if(mode==='forward') renderForward();
   else                 renderGoal();
@@ -160,6 +166,7 @@ function applyMode(){
   render();
 }
 document.querySelectorAll('.calc-tabs .tab').forEach(t=>t.addEventListener('click',()=>{
+  revealCalcResults();
   document.querySelectorAll('.calc-tabs .tab').forEach(x=>x.setAttribute('aria-selected','false'));
   t.setAttribute('aria-selected','true'); mode=t.dataset.mode; applyMode();
 }));
@@ -168,9 +175,10 @@ document.querySelectorAll('.io-toggle button').forEach(b=>b.addEventListener('cl
   b.setAttribute('aria-pressed','true'); ioMode=b.dataset.io; $('calcPanel').setAttribute('data-io',ioMode);
   refitAllInputs();
 }));
-$('ckReal').addEventListener('change',e=>{ showReal=e.target.checked; render(); });
-$('ckPaid').addEventListener('change',e=>{ showPaid=e.target.checked; render(); });
+$('ckReal').addEventListener('change',e=>{ revealCalcResults(); showReal=e.target.checked; render(); });
+$('ckPaid').addEventListener('change',e=>{ revealCalcResults(); showPaid=e.target.checked; render(); });
 $('addEvent').addEventListener('click',()=>{
+  revealCalcResults();
   events.push({id:uid(),emoji:'📌',label:'自訂事件',type:'out',year:Math.min(5,F.years),amount:500000});
   renderEvents(); render();
 });
@@ -185,6 +193,7 @@ applyMode();
 
 // ---- 複利頻率切換（每月 / 每季 / 每半年 / 每年）----
 document.querySelectorAll('#compoundFreq button').forEach(b=>b.addEventListener('click',()=>{
+  revealCalcResults();
   document.querySelectorAll('#compoundFreq button').forEach(x=>x.setAttribute('aria-pressed','false'));
   b.setAttribute('aria-pressed','true'); F.compound=+b.dataset.cm; render();
 }));
@@ -192,6 +201,7 @@ document.querySelectorAll('#compoundFreq button').forEach(b=>b.addEventListener(
 // ---- 精確數字 / 概數 切換 ----
 const numToggle=$('numToggle');
 if(numToggle) numToggle.addEventListener('click',()=>{
+  revealCalcResults();
   showExact=!showExact;
   numToggle.setAttribute('aria-pressed', showExact?'true':'false');
   numToggle.textContent = showExact ? '🔢 概數顯示' : '🔢 精確數字';
@@ -231,4 +241,3 @@ if(reduce){
   }),{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 }
-

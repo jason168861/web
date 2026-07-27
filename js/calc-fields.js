@@ -59,7 +59,9 @@ function buildFields(container, list){
     const slider=row.querySelector('.field-slider');
     const input =row.querySelector('.field-val');
     fitNumInput(input);
+    const reveal=()=>{ if(typeof revealCalcResults==='function') revealCalcResults(); };
     const commit=(v,syncInput)=>{
+      reveal();
       v=clamp(v,f.min,f.max); store[f.k]=v;
       slider.value=v;
       if(syncInput) input.value=fmtFieldVal(f,v);
@@ -68,6 +70,7 @@ function buildFields(container, list){
     };
     slider.addEventListener('input',()=>commit(parseFloat(slider.value),true));
     input.addEventListener('input',()=>{
+      reveal();
       fitNumInput(input);
       const v=parseFieldVal(f,input.value);
       if(!isNaN(v)){ store[f.k]=clamp(v,f.min,f.max); slider.value=store[f.k]; render(); }
@@ -94,6 +97,7 @@ function buildGoalExtra(){
    +'<div id="goalCond"></div>';
   host.appendChild(seg);
   host.querySelectorAll('.seg button').forEach(b=>b.addEventListener('click',()=>{
+    if(typeof revealCalcResults==='function') revealCalcResults();
     host.querySelectorAll('.seg button').forEach(x=>x.setAttribute('aria-pressed','false'));
     b.setAttribute('aria-pressed','true'); G.solve=b.dataset.solve; buildGoalCond(); render();
   }));

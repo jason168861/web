@@ -7,15 +7,16 @@
   // │ 總開關：true = 啟用鎖定（加 LINE 才開放）｜false = 全部開放      │
   // │ LINE 解鎖碼還沒設定好前，先設 false。設好後改 true 即啟用。      │
   // └─────────────────────────────────────────────────────────────┘
-  const LOCK_ENABLED=false;
+  const LOCK_ENABLED=true;
 
   const KEY='calcFeatUnlocked';
-  const CODE='GROW2026';   // ← 解鎖碼：請與 LINE 官方帳號「歡迎訊息」中的代碼一致
+  const CODE='0000';   // ← 解鎖碼：請與 LINE 官方帳號「歡迎訊息」中的代碼一致
   const LINE='https://line.me/R/ti/p/@453ubihw';
 
   const norm=s=>String(s||'').trim().toUpperCase();
   let unlocked=false;
   try{ unlocked=localStorage.getItem(KEY)==='1'; }catch(_){}
+  let pending=null;   // 解鎖成功後要執行的回呼（例如:下載報告）
 
   // 要鎖的區塊：[選擇器, 顯示標題, 遮罩放法]
   //  wrap  = 外層包裹（<details> 收合時子層不繪製，需用包裹層）
@@ -59,8 +60,8 @@
       '<div class="um-card" role="dialog" aria-modal="true" aria-label="解鎖完整功能">'
       +'<button class="um-x" type="button" aria-label="關閉">✕</button>'
       +'<div class="um-ico" aria-hidden="true">🔓</div>'
-      +'<h3>加入官方 LINE，解鎖完整試算</h3>'
-      +'<p class="um-desc">進階設定、複利頻率與人生事件，加入官方 LINE 後立即開放。</p>'
+      +'<h3 id="umTitle">加入官方 LINE，解鎖完整試算</h3>'
+      +'<p class="um-desc" id="umDesc">進階設定、複利頻率與人生事件，加入官方 LINE 後立即開放。</p>'
       +'<a class="um-line" href="'+LINE+'" target="_blank" rel="noopener">① 加入官方 LINE（取得解鎖碼）</a>'
       +'<div class="um-code">'
         +'<input type="text" id="umInput" placeholder="② 輸入歡迎訊息中的解鎖碼" autocomplete="off" aria-label="解鎖碼">'
@@ -81,9 +82,15 @@
     input.addEventListener('keydown',e=>{ if(e.key==='Enter') submit(); });
   }
   function escClose(e){ if(e.key==='Escape') closeModal(); }
-  function openModal(){
-    if(unlocked) return;
+  const DEF={title:'加入官方 LINE，解鎖完整試算',
+             desc:'進階設定、複利頻率與人生事件，加入官方 LINE 後立即開放。'};
+  function openModal(opts){
+    opts=opts||{};
+    if(unlocked){ if(opts.onSuccess) opts.onSuccess(); return; }  // 已解鎖直接放行
     if(!modal) buildModal();
+    pending=opts.onSuccess||null;
+    modal.querySelector('#umTitle').textContent=opts.title||DEF.title;
+    modal.querySelector('#umDesc').textContent =opts.desc ||DEF.desc;
     modal.classList.add('show');
     const i=modal.querySelector('#umInput'), er=modal.querySelector('#umErr');
     if(i) i.value=''; if(er) er.textContent='';
@@ -95,10 +102,16 @@
   function doUnlock(){
     unlocked=true; try{ localStorage.setItem(KEY,'1'); }catch(_){}
     removeLocks(); closeModal();
+    const cb=pending; pending=null; if(cb) cb();
   }
 
   if(LOCK_ENABLED && !unlocked) applyLocks();
 
   // 提供主控台手動鎖回（測試用）：unlockReset()
   window.unlockReset=function(){ try{ localStorage.removeItem(KEY); }catch(_){} location.reload(); };
+
+  // ---- 對外共用的 LINE 解鎖閘門（計算機與財務報告共用同一把鎖）----
+  //  LineGate.open({title, desc, onSuccess}) — 未解鎖則跳視窗，解鎖後執行 onSuccess
+  //  LineGate.isUnlocked() — 是否已解鎖
+  window.LineGate={ open:openModal, isUnlocked:()=>unlocked };
 })();

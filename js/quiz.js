@@ -124,7 +124,7 @@ function buildQuizSVG(best, scoreMap, picks){
 
   // ---- 頁首 ----
   body += seedIconSVG(M, 32, 28);
-  body += '<text x="' + (M + 40) + '" y="56" font-size="22" font-weight="700" fill="#16382E">周俊誠｜你的家庭財務夥伴</text>';
+  body += '<text x="' + (M + 40) + '" y="56" font-size="22" font-weight="700" fill="#16382E">享退休｜你的家庭財務夥伴</text>';
   body += '<text x="' + (W - M) + '" y="53" font-size="14" fill="#74807A" text-anchor="end">' + escXml(today) + '</text>';
   body += '<text x="' + M + '" y="112" font-size="34" font-weight="700" fill="#16382E">理財原型測驗結果</text>';
   body += '<text x="' + M + '" y="142" font-size="16" fill="#74807A">你的理財性格 × 下一步建議</text>';
@@ -194,7 +194,7 @@ function buildQuizSVG(best, scoreMap, picks){
   fy += 28;
   body += '<text x="' + M + '" y="' + fy + '" font-size="13" fill="#9AA39C">＊本測驗為理財性格的方向性自我檢視，非投資建議；實際規劃仍需依個人狀況綜合評估。</text>';
   fy += 26;
-  body += '<text x="' + M + '" y="' + fy + '" font-size="14" fill="#23553F">周俊誠 ・ RFC® 國際認證財務顧問師　│　LINE：@453ubihw　│　先找問題，才給工具</text>';
+  body += '<text x="' + M + '" y="' + fy + '" font-size="14" fill="#23553F">享退休 ・ RFC® 國際認證財務顧問師　│　LINE：@453ubihw　│　先找問題，才給工具</text>';
   const H = fy + 28;
 
   const svg =

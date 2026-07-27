@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>周俊誠|你的家庭財務夥伴</title>
-<meta name="description" content="財務顧問周俊誠:用聽得懂的話，陪你把錢的事一件一件理清楚。免費 30 分鐘諮詢。">
+<title>享退休｜以退休為起點的個人財務規劃</title>
+<meta name="description" content="享退休由 RFC® 國際認證財務顧問師周俊誠提供個人財務規劃，從退休目標出發，整合現金流、投資與風險規劃。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;700&family=Fraunces:opsz,wght@9..144,500;9..144,650&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&amp;family=Noto+Sans+TC:wght@400;500;700&amp;family=Fraunces:opsz,wght@9..144,500;9..144,650&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="home-redesign">
 
 <div class="scroll-progress" id="scrollBar" aria-hidden="true"></div>
 
@@ -22,524 +22,606 @@
         <path d="M12 11C12 6 8 4 4 4c0 5 3 8 8 7Z" fill="#7FA08A"/>
         <path d="M12 11c0-5 4-7 8-7 0 5-3 8-8 7Z" fill="#D89436"/>
       </svg>
-      周俊誠
+      <span class="logo-name">享退休</span>
+      <span class="logo-subtitle">以退休為起點的個人財務規劃</span>
     </a>
     <ul class="nav-links">
-      <li><a href="#services">服務項目</a></li>
-      <li><a href="#calc">複利試算</a></li>
-      <li><a href="#quiz">性格測驗</a></li>
-      <li><a href="#strategies">理財冷知識</a></li>
-      <li><a href="#process">合作流程</a></li>
+      <li><a href="#pain">常見困擾</a></li>
+      <li><a href="#method">我的方法</a></li>
+      <li><a href="#stories">規劃故事</a></li>
+      <li><a href="#services">服務方式</a></li>
+      <li><a href="#tools">免費工具</a></li>
+      <li><a href="#money-faq">財務問題</a></li>
       <li><a href="#about">關於我</a></li>
-      <li><a href="#faq">常見問題</a></li>
     </ul>
-    <a class="btn small" href="https://line.me/R/ti/p/@453ubihw" target="_blank" rel="noopener">免費諮詢</a>
+    <details class="site-map-menu">
+      <summary>網站架構</summary>
+      <div class="site-map-panel">
+        <a href="#pain">客戶常見困擾</a>
+        <a href="#method">我的方法</a>
+        <a href="#stories">真實規劃故事</a>
+        <a href="#services">服務方式</a>
+        <a href="#tools">免費工具</a>
+        <a href="#money-faq">常見財務問題</a>
+        <a href="#about">關於我</a>
+        <a href="#booking-faq">預約與合作疑問</a>
+      </div>
+    </details>
   </div>
 </header>
 
 <main id="top">
 
-<!-- Hero -->
-<section class="hero">
+<!-- 1. Hero -->
+<section class="hero hero-redesign" aria-labelledby="heroTitle">
   <div class="wrap hero-grid">
-    <div>
-      <span class="eyebrow">🌱 RFC® 國際認證財務顧問師</span>
-      <h1>錢的事，<br>不用<span class="hl">一個人煩惱<svg viewBox="0 0 200 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9 Q 50 2, 100 7 T 198 5" fill="none" stroke="#D89436" stroke-width="3.5" stroke-linecap="round"/></svg></span>。</h1>
-      <p class="lead">嗨，我是俊誠。我的原則很簡單:先找到問題，才給合適的工具。在每個重大財務決策之前，我幫你把選項和風險拆解清楚、想明白，讓你做出最適合自己的決定;決定之後，再陪你一步步把它執行到位。</p>
+    <div class="hero-copy reveal">
+      <h1 id="heroTitle">讓現在的財務，<br>支撐未來的選擇。</h1>
+      <p class="lead">從退休目標出發，整合現金流、投資與風險規劃，幫你找出缺口和下一步。</p>
       <div class="hero-cta">
-        <a class="btn" href="#contact">預約免費 30 分鐘諮詢</a>
-        <a class="btn honey" href="#calc">先玩玩複利試算 →</a>
+        <a class="btn btn-lg hero-cta-primary" href="https://line.me/R/ti/p/@453ubihw" target="_blank" rel="noopener">在 LINE 預約免費 30 分鐘財務健檢</a>
+        <a class="hero-link hero-cta-secondary" href="#tools">先使用免費工具</a>
       </div>
-      <p class="hero-note">首次諮詢完全免費，不綁定、不硬推，聊完不喜歡就當交個朋友。</p>
+      <p class="hero-id">
+        <img class="hero-id-ava" src="picture-avatar.jpg" alt="財務顧問周俊誠" width="52" height="52" loading="lazy" decoding="async">
+        <span>周俊誠｜RFC® 國際認證財務顧問師</span>
+      </p>
     </div>
-    <div class="portrait">
-      <!-- ★ 你的主照片放這裡:把下面的 photo-main.jpg 改成你的照片檔名 ★ -->
-      <div class="frame"><img src="picture.png" alt="財務顧問周俊誠"></div>
-      <div class="badge"><b>RFC®</b>國際認證財務顧問師</div>
+    <div class="portrait reveal">
+      <div class="frame">
+        <picture>
+          <source srcset="picture.webp" type="image/webp">
+          <img src="picture.jpg" alt="享退休財務顧問周俊誠本人專業形象照" width="340" height="425" fetchpriority="high" decoding="async">
+        </picture>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 信任條 -->
-<div class="trust">
-  <div class="wrap trust-grid">
-    <div><b>RFC®</b><span>國際認證財務顧問師</span></div>
-    <div><b class="count-up" data-count="7" data-suffix=" 年">7 年</b><span>教學經驗，把複雜講清楚</span></div>
-    <div><b class="count-up" data-count="30" data-suffix=" 分鐘">30 分鐘</b><span>首次諮詢完全免費</span></div>
-    <div><b>先問題</b><span>後工具，不本末倒置</span></div>
-  </div>
-</div>
-
-<!-- 服務 -->
-<section id="services">
+<!-- 2. 客戶常見困擾 -->
+<section id="pain" class="pain-section">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="tag">SERVICES</span>
-      <h2>不管你在哪個階段，都有可以開始的地方</h2>
-      <p>理財不是有錢人的專利。月薪三萬也好、剛成家也好、準備退休也好——重點是從現在的你開始。</p>
+      <span class="tag">COMMON SITUATIONS</span>
+      <h2>你可能不是不努力，只是問題混在一起了</h2>
+      <p>先不用急著找工具。很多財務卡關，是因為目標、期限與風險沒有被分開看。</p>
     </div>
-    <div class="cards">
-      <div class="card featured reveal">
-        <span class="flag">招牌服務</span>
-        <div class="icon">⚖️</div>
-        <h3>財務決策風險評估</h3>
-        <p>該不該買房?要不要離職創業?這筆錢能不能投下去?在你做決定之前，我會用一套系統化的問答，替你的決策做「壓力測試」——把藏在樂觀想像底下的風險一個個找出來、攤在桌上。你看得夠清楚，自然能做出合適的判斷;真正要往下走時，我再陪你一步步執行。</p>
-        <span class="who">適合:正站在財務十字路口、需要第二雙眼睛的你</span>
-      </div>
-      <div class="card reveal">
-        <div class="icon">💡</div>
-        <h3>小資理財啟航</h3>
-        <p>搞懂錢都花去哪、建立緊急預備金、踏出投資第一步。從零開始也完全沒問題，我會陪你打好地基。</p>
-        <span class="who">適合:理財新手、社會新鮮人</span>
-      </div>
-      <div class="card reveal">
-        <div class="icon">🏠</div>
-        <h3>家庭收支健檢</h3>
-        <p>雙薪家庭、育兒開銷、房貸壓力⋯⋯一次盤點全家的金流，找出可以優化的空間，讓每一塊錢花得安心。</p>
-        <span class="who">適合:新婚、育兒中的家庭</span>
-      </div>
-      <div class="card reveal">
-        <div class="icon">🛡️</div>
-        <h3>保單健診</h3>
-        <p>你買的保險真的保得到你嗎?我會與長期合作的保險專業夥伴協同，逐張檢視你的保單、找出重複與缺口。需要調整時，也能直接協助你辦到好。</p>
-        <span class="who">適合:保單一堆但看不懂的人</span>
-      </div>
-      <div class="card reveal">
-        <div class="icon">🌅</div>
-        <h3>退休與投資規劃</h3>
-        <p>算出你的退休需要多少錢，設計一套可以睡得著覺的長期投資計畫，讓未來的你謝謝現在的你。</p>
-        <span class="who">適合:30 歲以上開始布局的你</span>
-      </div>
+    <div class="issue-grid">
+      <article class="issue-card reveal">
+        <span>01</span>
+        <h3>存錢卡關</h3>
+        <p>明明收入不低，到了月底卻總是剩不下多少，也不知道錢究竟花到哪裡。</p>
+      </article>
+      <article class="issue-card reveal">
+        <span>02</span>
+        <h3>投資迷惘</h3>
+        <p>看了很多 ETF、基金或股票資訊，卻越看越不知道哪一種適合自己。</p>
+      </article>
+      <article class="issue-card reveal">
+        <span>03</span>
+        <h3>目標衝突</h3>
+        <p>想存退休金、養小孩、旅行、買車，又怕每個目標都只能做一半。</p>
+      </article>
+      <article class="issue-card reveal">
+        <span>04</span>
+        <h3>退休沒底</h3>
+        <p>知道該準備退休，但不知道現在的投入金額，能不能撐起未來生活。</p>
+      </article>
+      <article class="issue-card reveal">
+        <span>05</span>
+        <h3>保障不明</h3>
+        <p>保單很多、繳費不少，卻不確定真正出事時能不能補上收入缺口。</p>
+      </article>
+      <article class="issue-card reveal">
+        <span>06</span>
+        <h3>買房兩難</h3>
+        <p>想買房又怕壓縮生活品質，也擔心頭期款、房貸和退休準備互相拉扯。</p>
+      </article>
     </div>
-    <p class="svc-note reveal">若你關心的是<b>資產傳承與稅務保險規劃</b>,這也是我深耕的領域，歡迎透過表單或 LINE 私下聊聊。</p>
   </div>
 </section>
 
-<!-- 複利試算機 -->
-<section class="calc-sec" id="calc">
+<!-- 3. 我的方法 -->
+<section id="method" class="method-section">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="tag">TRY IT</span>
-      <h2>複利試算機:看看時間能為你做什麼</h2>
-      <p>把現有的一筆錢、每月能投入的金額拉拉看。中途要買房、領年終?都能加進去算。很多人第一次看到結果都說:「早知道就早點開始。」</p>
+      <span class="tag">METHOD</span>
+      <h2>先找問題，再給工具</h2>
+      <p>財務規劃不是先挑商品，而是先把決策順序排清楚。</p>
     </div>
-    <div class="calc-tabs reveal" role="tablist" aria-label="試算模式">
-      <button class="tab" role="tab" aria-selected="true" data-mode="forward">💰 我能滾出多少?</button>
-      <button class="tab" role="tab" aria-selected="false" data-mode="goal">🎯 目標怎麼達成?</button>
+    <div class="method-flow">
+      <article class="method-step reveal">
+        <span class="step-no">01</span>
+        <h3>你想去哪裡？</h3>
+        <p>釐清生活、買房、家庭與退休目標。</p>
+      </article>
+      <article class="method-step reveal">
+        <span class="step-no">02</span>
+        <h3>你現在在哪裡？</h3>
+        <p>整理現金流、資產、負債、投資與保障。</p>
+      </article>
+      <article class="method-step reveal">
+        <span class="step-no">03</span>
+        <h3>什麼可能讓計畫中斷？</h3>
+        <p>檢查收入、健康、市場與家庭風險。</p>
+      </article>
+      <article class="method-step reveal">
+        <span class="step-no">04</span>
+        <h3>現在應該先做什麼？</h3>
+        <p>排出順序，再選擇適合的工具。</p>
+      </article>
     </div>
-
-    <div class="calc-grid">
-      <!-- ───────── 左:輸入面板 ───────── -->
-      <div class="calc-panel" id="calcPanel" data-io="slider">
-        <div class="panel-head">
-          <span class="panel-title">你的條件</span>
-          <div class="io-toggle" role="group" aria-label="輸入方式">
-            <button type="button" data-io="slider" aria-pressed="true">🎚 滑桿</button>
-            <button type="button" data-io="input" aria-pressed="false">⌨️ 輸入</button>
-          </div>
-        </div>
-
-        <!-- 正向模式欄位(JS 渲染) -->
-        <div id="forwardFields"></div>
-        <!-- 目標模式欄位(JS 渲染) -->
-        <div id="goalFields" class="hide"></div>
-
-        <!-- 進階設定 -->
-        <details class="adv">
-          <summary>進階設定 <i>通膨・每年增額・成本費用</i></summary>
-          <div class="adv-body" id="advFields"></div>
-          <div class="compound-freq">
-            <span class="cf-label">複利頻率
-              <span class="info" tabindex="0" role="img" aria-label="多久結算一次利息。結算越頻繁，長期成長略快。每月最貼近定期定額的實際情況。" data-tip="多久結算一次利息。結算越頻繁，長期成長略快。每月最貼近定期定額的實際情況。">?</span>
-            </span>
-            <div class="seg" id="compoundFreq" role="group" aria-label="複利頻率">
-              <button type="button" data-cm="1" aria-pressed="false">每月</button>
-              <button type="button" data-cm="3" aria-pressed="false">每季</button>
-              <button type="button" data-cm="6" aria-pressed="false">每半年</button>
-              <button type="button" data-cm="12" aria-pressed="true">每年</button>
-            </div>
-          </div>
-        </details>
-
-        <!-- 人生事件(僅正向模式) -->
-        <div class="events" id="eventsWrap">
-          <div class="events-head">
-            <b>🧭 人生事件</b>
-            <i>在第幾年中途提領(買房/買車/教育)或投入(年終/繼承)</i>
-          </div>
-          <div class="chips" id="eventChips"></div>
-          <div id="eventList"></div>
-          <button type="button" class="add-event" id="addEvent">＋ 自訂一筆事件</button>
-        </div>
-      </div>
-
-      <!-- ───────── 右:結果(即時檢視 + 細節,皆為 calc-grid 直接子項) ───────── -->
-
-        <!-- 即時檢視:終值 + 圖表(手機版會釘在畫面頂端,可拖動到想要的位置) -->
-        <div class="result-stage">
-          <div class="stage-drag" id="stageDrag" role="button" tabindex="0" aria-label="拖動即時檢視,可移到想要的位置" title="拖動可移動位置 ・ 連點兩下回到頂端"><span class="grip"></span></div>
-          <button class="stage-zoom" id="stageZoom" type="button" aria-label="放大即時檢視" aria-pressed="false" title="放大檢視">
-            <svg class="zi-in" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <svg class="zi-out" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </button>
-          <button class="stage-close" id="stageClose" type="button" aria-label="把即時檢視收到右側" title="收到右側">✕</button>
-          <!-- 正向:大數字 -->
-          <div id="resForward">
-            <div class="headline">
-              <span>資產終值(名目)</span>
-              <b id="totalOut">—</b>
-              <span class="real-sub hide" id="realSub"></span>
-              <span class="mini-kpi" id="miniKpi"></span>
-            </div>
-          </div>
-          <!-- 目標:答案 -->
-          <div class="answer hide" id="resGoal">
-            <span id="ansLabel">要達成目標,你每月需要投入</span>
-            <b id="ansValue">NT$ 12,345</b>
-            <span class="sub" id="ansSub"></span>
-          </div>
-
-          <div class="chart-box">
-            <div class="chart-tools">
-              <label class="ck"><input type="checkbox" id="ckPaid" checked> 投入本金線</label>
-              <label class="ck"><input type="checkbox" id="ckReal"> 通膨後實質購買力</label>
-              <button type="button" id="numToggle" class="num-toggle" aria-pressed="false" aria-label="切換金額顯示方式:精確數字或概數">🔢 精確數字</button>
-              <button type="button" id="exportBtn" class="export-btn" aria-label="把目前的試算結果與圖表匯出成圖片">🖼 匯出圖片</button>
-            </div>
-            <div class="chart-host" id="chartHost">
-              <svg id="chart" viewBox="0 0 640 300" role="img" aria-label="資產成長曲線圖"></svg>
-              <div class="tip hide" id="chartTip"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 細節:投入/獲利、組成、提醒(手機版排在輸入下方) -->
-        <div class="result-detail" id="fwdDetail">
-          <div class="result-nums">
-            <div class="box"><span>你總共投入</span><b id="totalIn">—</b></div>
-            <div class="box gain"><span>複利為你賺進</span><b id="totalGain">—</b></div>
-          </div>
-          <div class="compo" id="compoBar"></div>
-          <div class="evstat hide" id="evStat"></div>
-          <div class="warn hide" id="warnBox"></div>
-          <div class="delay-cost hide" id="delayCost">
-            <span class="ic">⏳</span>
-            <p id="delayText"></p>
-          </div>
-        </div>
-
-        <details class="table-wrap">
-          <summary>📋 逐年明細表</summary>
-          <div class="table-scroll">
-            <table id="yearTable"></table>
-          </div>
-        </details>
-
-        <p class="calc-foot">＊複利頻率可自選(預設每年結算),並可選擇納入通膨、每年增額與成本費用,僅為數學試算,不代表任何商品之實際報酬,投資必有風險。想知道適合你的做法?<a href="https://line.me/R/ti/p/@453ubihw" target="_blank" rel="noopener" style="color:#F6E3C2">來聊聊</a>。</p>
-    </div>
+    <p class="method-note reveal">工具可以更換，但決策順序不能顛倒。</p>
   </div>
 </section>
 
-<!-- 理財原型測驗 -->
-<section class="quiz-sec" id="quiz">
-  <div class="wrap">
-    <div class="sec-head reveal" style="text-align:center;margin-left:auto;margin-right:auto">
-      <span class="tag">2 分鐘測驗</span>
-      <h2>你是哪一種理財性格？</h2>
-      <p>在給工具之前，我習慣先搞懂你是誰。回答 5 個情境題，看看你的金錢直覺藏著什麼盲點。</p>
-    </div>
-    <div class="quiz-card reveal">
-      <div class="quiz-progress" id="quizProgress" aria-hidden="true"></div>
-      <div id="quizBody" aria-live="polite"></div>
-    </div>
-  </div>
-</section>
-
-<!-- 金融策略圖鑑 -->
-<!-- <section id="strategies" style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head reveal" style="text-align:center;margin-left:auto;margin-right:auto">
-      <span class="tag">FINANCIAL DECODE</span>
-      <h2>理財冷知識・金融策略圖鑑</h2>
-      <p>有錢人在玩的那些「金融遊戲」，一張卡片拆給你看——而且老實告訴你，搬到台灣到底行不行。</p>
-    </div>
-    <div class="strat-grid reveal" id="stratGrid">
-
-      <article class="strat-card" tabindex="0" role="button" aria-label="展開:複利與 72 法則">
-        <span class="strat-emoji" aria-hidden="true">⏳</span>
-        <span class="strat-tag">複利</span>
-        <h3>巴菲特的財富，99% 是 50 歲後才滾出來的</h3>
-        <p class="strat-teaser">複利真正的魔法不在報酬率，而在「時間」。一個小公式，讓你心算翻倍要幾年。</p>
-        <span class="strat-more">看完整拆解 →</span>
-        <div class="strat-body" hidden>
-          <p>複利就是「利息也會生利息」。前期看起來慢得讓人想放棄，後期卻會像曲棍球桿一樣陡峭噴出——這就是為什麼「越早開始」差距會大到不可思議。</p>
-          <span class="s-h">72 法則：心算翻倍要幾年</span>
-          <p>用 <b>72 ÷ 年報酬率 ≈ 資產翻倍所需年數</b>。年報酬 6% → 72/6 = 12 年翻倍；8% → 9 年。反過來，通膨 3% 會讓你的購買力在 72/3 = 24 年腰斬。</p>
-          <span class="s-h">晚 10 年的代價，不是 10 年的錢</span>
-          <p>25 歲起每月存 5,000、年報酬 7%，到 65 歲約滾成 1,200 萬以上；若 35 歲才開始，最後大約只剩一半。你少掉的不是 10 年的本金，而是「複利最甜的那 10 年」。</p>
-          <div class="s-tw"><b>🇹🇼 台灣怎麼看：</b>對多數人，最實際的複利工具就是「低成本指數型 ETF＋定期定額＋不要中途解約」。時間拉長後，手續費與情緒成本越要壓低，因為它們也會被複利放大。</div>
-          <p class="s-key"><b>重點：</b>報酬率高一點長期差很多，但「早開始」與「不中斷」比追高報酬更可靠。</p>
-        </div>
-      </article>
-
-      <article class="strat-card" tabindex="0" role="button" aria-label="展開:生命週期投資法">
-        <span class="strat-emoji" aria-hidden="true">🧬</span>
-        <span class="strat-tag">投資策略</span>
-        <h3>年輕人其實「輸得起」，所以更該多買股？</h3>
-        <p class="strat-teaser">你的未來薪水，其實是一張看不見的大債券——這會改變你該怎麼配置。</p>
-        <span class="strat-more">看完整拆解 →</span>
-        <div class="strat-body" hidden>
-          <span class="s-h">核心概念：人力資本</span>
-          <p>年輕時你最大的資產不是存款，是「未來幾十年的薪水」，它穩定得像一張債券。既然你已經握著這張巨大的「人類債券」，投資組合裡其實可以放更高比例的股票來平衡整體風險。</p>
-          <span class="s-h">主流版（穩健）</span>
-          <p>隨年齡逐步降低股票比例（年輕多股、接近退休多債），也就是「目標日期 glide path」。一個常見的起手式：股票比例 ≈ <b>110 − 年齡</b>（%）。</p>
-          <span class="s-h">激進版（原書 Ayres &amp; Nalebuff）</span>
-          <p>主張年輕時用「槓桿」買股，把一生的股票曝險攤平、理論上降低總風險。</p>
-          <div class="s-warn"><b>⚠️ 風險：</b>槓桿會放大波動、有「斷頭」與心理承受問題，是進階玩法，<b>不是給一般人的建議</b>。融資、槓桿型 ETF 都屬此類，不熟別碰。</div>
-          <div class="s-tw"><b>🇹🇼 台灣怎麼看：</b>一般上班族用「主流版」就很夠——年輕時提高股票/股票型 ETF 比例，再隨年齡與責任（房貸、小孩）逐步調整。</div>
-          <p class="s-key"><b>重點：</b>配置要看「人力資本＋金融資產」的全貌，不是只盯著戶頭裡那幾 %。</p>
-        </div>
-      </article>
-
-      <article class="strat-card" tabindex="0" role="button" aria-label="展開:買借死的台灣版">
-        <span class="strat-emoji" aria-hidden="true">🏦</span>
-        <span class="strat-tag">進階・稅務</span>
-        <h3>富人的「買借死」，台灣人照抄會出事</h3>
-        <p class="strat-teaser">美國 billionaire 的避稅神操作，搬到台灣為什麼幾乎失效？</p>
-        <span class="strat-more">看完整拆解 →</span>
-        <div class="strat-body" hidden>
-          <span class="s-h">美國版 Buy, Borrow, Die</span>
-          <p><b>買</b>（買進會增值的資產）→ <b>借</b>（用資產抵押借錢花用，借款不算所得、免稅）→ <b>死</b>（過世時繼承人享「成本墊高 step-up」，未實現的資本利得稅一筆勾銷）。整套招式的目的，全在「躲資本利得稅」。</p>
-          <div class="s-tw"><b>🇹🇼 台灣怎麼看 — 三個關鍵差異：</b>
-          <br>① 台灣個人賣「上市櫃股票」目前<b>停徵證所稅</b>（只有 0.3% 證交稅）→ 你本來就幾乎沒有資本利得稅要躲，這招最大的誘因直接消失。
-          <br>② 房地產有「房地合一稅」，台灣<b>沒有</b>美國式的死亡 step-up 全免機制。
-          <br>③ 台灣有<b>遺產稅（最高 20%）</b>，「死」這一步在台灣是要課稅的，不是免稅出口。</div>
-          <div class="s-warn"><b>⚠️ 風險：</b>「借錢抵押」靠的是資產不跌、利率不升。一旦資產下跌或利率走高，維持率不足會被追繳甚至斷頭。名人玩得起，是因為資產夠大、現金流夠穩。</div>
-          <p class="s-key"><b>重點：</b>這招在台灣比較像「資產傳承＋流動性規劃」的思考素材，而不是能照抄的避稅公式。真要做傳承，台灣的工具是保險、分年贈與、信託等，需要量身規劃。</p>
-          <p class="sm-note">＊稅制與數字會變動，實際規定請以最新法規為準。</p>
-        </div>
-      </article>
-
-      <article class="strat-card" tabindex="0" role="button" aria-label="展開:定期定額 vs 單筆">
-        <span class="strat-emoji" aria-hidden="true">⚖️</span>
-        <span class="strat-tag">投資策略</span>
-        <h3>手上有一筆錢，該一次 all in 還是分批進場？</h3>
-        <p class="strat-teaser">統計上「一次投入」常常贏，但有個你沒算進去的成本。</p>
-        <span class="strat-more">看完整拆解 →</span>
-        <div class="strat-body" hidden>
-          <span class="s-h">數據面：一次投入期望值略高</span>
-          <p>因為市場長期向上，多數歷史回測顯示「一次投入（Lump Sum）」的期望報酬，略高於「分批／定期定額（DCA）」——因為錢越早進場、複利滾越久。</p>
-          <span class="s-h">但人性面：分批睡得著</span>
-          <p>分批進場降低「買在最高點」的後悔風險，也更符合人性。對「每月有薪水持續投入」的上班族來說，定期定額本來就是最自然的方式。</p>
-          <span class="s-h">折衷做法</span>
-          <p>有一大筆閒錢又怕套在高點，可在 <b>3–6 個月內分批但快速</b>投入，兼顧期望報酬與心理安定；之後的現金流再走定期定額。</p>
-          <div class="s-tw"><b>🇹🇼 台灣怎麼看：</b>台灣券商／銀行的定期定額很方便（零股、ETF 都能設），重點是「設定好就別亂停」。最傷的不是方法選錯，是大跌時停扣、反彈時又不敢買。</div>
-          <p class="s-key"><b>重點：</b>沒有完美解，只有「你能不能長期執行」的解。能堅持的方法，就是好方法。</p>
-        </div>
-      </article>
-
-      <article class="strat-card" tabindex="0" role="button" aria-label="展開:通膨是隱形的稅">
-        <span class="strat-emoji" aria-hidden="true">🔥</span>
-        <span class="strat-tag">原理・心態</span>
-        <h3>放在銀行的 100 萬，正在慢慢「蒸發」</h3>
-        <p class="strat-teaser">你沒虧錢，但購買力每年被偷走一點——這才是最該怕的事。</p>
-        <span class="strat-more">看完整拆解 →</span>
-        <div class="strat-body" hidden>
-          <p>通膨讓「同樣的錢能買的東西變少」。年通膨 3%，今天的 100 萬，約 24 年後只剩一半購買力（用 72 法則：72/3 = 24）。</p>
-          <span class="s-h">為什麼是「隱形的稅」</span>
-          <p>你的帳面數字沒變、感覺沒虧，但實質財富被持續課走——所以「把錢全放定存」在長期其實是溫水煮青蛙。</p>
-          <span class="s-h">怎麼對抗</span>
-          <p>讓資產的長期報酬「跑贏通膨」。這正是為什麼長期理財幾乎都會配置股票／實質資產，而不是只抱現金。</p>
-          <div class="s-tw"><b>🇹🇼 台灣怎麼看：</b>台灣定存利率長年偏低，常常追不上通膨。緊急預備金（約 6 個月生活費）該放穩當的地方，但「所有錢都放現金」對長期目標反而不利。</div>
-          <p class="s-key"><b>重點：</b>不投資也是一種選擇——選擇讓通膨慢慢替你做決定。</p>
-        </div>
-      </article>
-
-      <article class="strat-card" tabindex="0" role="button" aria-label="展開:4% 法則與 FIRE">
-        <span class="strat-emoji" aria-hidden="true">🏝️</span>
-        <span class="strat-tag">進階玩法</span>
-        <h3>存到多少就能不上班？一個簡單公式</h3>
-        <p class="strat-teaser">「財務自由」不是玄學，先把它變成一個可以算的數字。</p>
-        <span class="strat-more">看完整拆解 →</span>
-        <div class="strat-body" hidden>
-          <span class="s-h">4% 法則</span>
-          <p>退休後第一年提領資產的 4%，之後每年隨通膨微調，歷史上多數情況可撐 30 年以上。反推：你需要的退休本金 ≈ <b>年支出 × 25</b>。</p>
-          <span class="s-h">換算成你的「自由數字」</span>
-          <p>年支出 60 萬 → 60 × 25 = <b>1,500 萬</b>，達到後理論上可「靠提領過活」。月支出 5 萬，算出來也是約 1,500 萬。</p>
-          <span class="s-h">FIRE：提早達標的關鍵</span>
-          <p>FIRE（財務自由、提早退休）靠的是「高儲蓄率＋投資」。<b>儲蓄率比報酬率更關鍵</b>——存得越多，達標越快。</p>
-          <div class="s-warn"><b>⚠️ 注意：</b>4% 是「規則參考」不是保證。遇到退休初期就大跌（順序風險）、長壽、醫療支出，都需要更保守（有人改用 3.5%）。</div>
-          <div class="s-tw"><b>🇹🇼 台灣怎麼看：</b>別忘了把<b>勞保年金、勞退、可能的房產</b>一起納入退休現金流。4% 法則是起點，真正的退休規劃要把這些拼起來看。</div>
-          <p class="s-key"><b>重點：</b>先算出你的「自由數字」，目標就具體了——剩下的是儲蓄率與時間。</p>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section> -->
-
-<!-- 流程 -->
-<section id="process">
+<!-- 4. 真實規劃故事 -->
+<section id="stories" class="story-section">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="tag">PROCESS</span>
-      <h2>合作流程，簡單三步</h2>
-      <p>沒有複雜的話術，每一步你都清楚知道在做什麼。</p>
+      <span class="tag">PLANNING STORIES</span>
+      <h2>真實規劃故事，看見問題怎麼被拆開</h2>
+      <p>以下為去識別化後的規劃情境，重點在判斷過程，不公開客戶個資、商品細節或完整規劃報告。</p>
     </div>
-    <div class="steps">
-      <div class="step reveal">
-        <span class="free">免費</span>
-        <h3>聊聊你的狀況</h3>
-        <p>30 分鐘線上或面對面，聊聊你目前的財務狀況和最想解決的煩惱。就是聊天，不用準備什麼。</p>
-      </div>
-      <div class="step reveal">
-        <h3>量身打造計畫</h3>
-        <p>我會根據你的收支、目標與風險承受度，做出一份白話到爸媽都看得懂的專屬財務計畫書。</p>
-      </div>
-      <div class="step reveal">
-        <h3>陪你走下去</h3>
-        <p>計畫不是做完就結束。每季追蹤、隨人生變化調整，有問題隨時 LINE 我，我都在。</p>
-      </div>
+    <div class="case-grid">
+      <details class="case-card reveal" open>
+        <summary>
+          <span>案例一｜資產增加，為什麼每個月還是存不到錢？</span>
+          <b>案例摘要</b>
+        </summary>
+        <div class="case-body">
+          <div class="case-brief">
+            <p><strong>原本想法：</strong>一年內流動資產增加約 50%，財務狀況正在改善。</p>
+            <p><strong>真正問題：</strong>每月現金流仍是赤字，一次性資金移入讓資產看起來增加，但收支結構沒有真的改善。</p>
+            <p><strong>核心調整：</strong>重新分類基本開銷、娛樂預算與保險支出，先穩住現金流，再安排儲蓄與投資節奏。</p>
+          </div>
+          <details class="case-more">
+            <summary>查看我是怎麼判斷的</summary>
+            <div class="case-more-body">
+              <p><strong>判斷依據：</strong>檢視記帳紀錄後，發現多數月份處於負結餘；後幾個月生活開銷膨脹明顯。另有特定月份出現大額收入，確認後發現並非穩定工作收入，而是一次性資金移入。</p>
+              <p><strong>處理順序：</strong>先拆解日常現金流，分出基本開銷、娛樂開銷與保險支出；再預留下年度已知保費預算，設定每月生活與娛樂支出的範圍，最後才安排年度投資節奏。</p>
+              <p><strong>成果：</strong>客戶看得懂資金流向，也能在不過度犧牲生活品質的情況下持續累積資產。</p>
+            </div>
+          </details>
+        </div>
+      </details>
+      <details class="case-card reveal">
+        <summary>
+          <span>案例二｜距離財富自由還有七成，就應該更激進嗎？</span>
+          <b>案例摘要</b>
+        </summary>
+        <div class="case-body">
+          <div class="case-brief">
+            <p><strong>原本想法：</strong>距離目標還很遠，必須提高投資風險才能加快累積。</p>
+            <p><strong>真正問題：</strong>目標優先順序尚未定義，安全資金、長期投資與不動產價值混在一起，保障也不足以承受投資中斷。</p>
+            <p><strong>核心調整：</strong>分開安全資金與長期投資，把不動產納入整體配置，補足必要保障後，再重新設定投資風險。</p>
+          </div>
+          <details class="case-more">
+            <summary>查看我是怎麼判斷的</summary>
+            <div class="case-more-body">
+              <p><strong>判斷依據：</strong>透過訪談發現，財務目標還沒有被排序成清楚的必要計畫，因此投資配置容易偏向激進，資金用途也沒有分層，對市場波動與人生風險的承受度被高估。</p>
+              <p><strong>處理順序：</strong>先把財富自由目標轉成明確金額、時間與優先順序；再用資產配置區分激進投資部位、保守穩定成長部位與安全資金，並補上必要的人身保障。</p>
+              <p><strong>成果：</strong>客戶不再只追求報酬率，而是用更完整、可持續的方式接近財富自由。</p>
+            </div>
+          </details>
+        </div>
+      </details>
     </div>
   </div>
 </section>
 
-<!-- 關於我 -->
-<section id="about" style="padding-top:0">
+<!-- 5. 服務方式 -->
+<section id="services" class="service-section">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="tag">WAYS TO WORK</span>
+      <h2>我可以怎麼跟你合作？</h2>
+      <p>依照你現在需要的深度，選擇先釐清、完整規劃，或定期追蹤。</p>
+    </div>
+    <div class="service-grid">
+      <article class="service-option reveal">
+        <span class="service-label">初步釐清</span>
+        <h3>免費 30 分鐘財務健檢</h3>
+        <dl>
+          <dt>適合誰</dt><dd>想先找出目前主要問題的人。</dd>
+          <dt>會處理什麼</dt><dd>快速檢視現金流、目標、缺口與優先順序。</dd>
+          <dt>合作形式</dt><dd>線上或面對面 30 分鐘，帶著問題來即可。</dd>
+        </dl>
+      </article>
+      <article class="service-option main-service reveal">
+        <span class="service-label">主要服務</span>
+        <h3>一次性完整財務規劃</h3>
+        <dl>
+          <dt>適合誰</dt><dd>想把收支、投資、保險、買房與退休一次整理清楚的人。</dd>
+          <dt>會處理什麼</dt><dd>完整整理現況、目標、風險、試算與執行順序。</dd>
+          <dt>合作形式</dt><dd>以規劃專案進行，完成後交付可執行的規劃方向。</dd>
+        </dl>
+      </article>
+      <article class="service-option reveal">
+        <span class="service-label">依需求提供</span>
+        <h3>年度定期檢視與陪跑</h3>
+        <dl>
+          <dt>適合誰</dt><dd>需要持續追蹤、調整及重大決策討論的人。</dd>
+          <dt>會處理什麼</dt><dd>更新現金流、目標進度、配置變化與風險缺口。</dd>
+          <dt>合作形式</dt><dd>依年度或重要節點安排檢視，協助你調整下一步。</dd>
+        </dl>
+      </article>
+    </div>
+    <div class="service-action reveal">
+      <a class="btn honey" href="#booking-faq">了解合作方式</a>
+      <p>正式合作前，會先確認規劃範圍與費用，雙方同意後才開始。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6. 免費工具 + 進階版解鎖 -->
+<section id="tools" class="tools-section">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="tag">FREE TOOLS</span>
+      <h2>現在可以先做的三個檢查</h2>
+      <p>工具只負責讓問題浮出水面；真正的規劃，仍要回到你的目標、現金流與風險承受度。</p>
+    </div>
+    <div class="tool-card-grid">
+      <article class="tool-card reveal">
+        <span>01</span>
+        <h3>財務健檢</h3>
+        <p>檢查淨值、儲蓄率、緊急預備金與退休缺口，先看見哪些地方需要被評估。</p>
+        <a href="#report">開始健檢</a>
+      </article>
+      <article class="tool-card reveal">
+        <span>02</span>
+        <h3>退休／複利試算</h3>
+        <p>檢查目前投入金額、時間與想要的退休生活是否對得起來。</p>
+        <a href="#calc">進行試算</a>
+      </article>
+      <article class="tool-card reveal">
+        <span>03</span>
+        <h3>投資性格測驗</h3>
+        <p>檢查你做投資決策時，偏向進攻、保守、規劃，還是尚未開始。</p>
+        <a href="#quiz">開始測驗</a>
+      </article>
+    </div>
+    <div class="tool-workbench">
+      <article id="report" class="tool-widget report-sec">
+        <div class="sec-head reveal">
+          <span class="tag">FREE CHECKUP</span>
+          <h2>3 分鐘財務健檢報告</h2>
+          <p>填幾個數字，先看見淨值、儲蓄率、緊急預備金與退休缺口可能藏著哪些問題。</p>
+        </div>
+        <form class="report-form reveal" id="reportForm" novalidate>
+          <div class="rf-grid">
+            <fieldset class="rf-set">
+              <legend>關於你</legend>
+              <label class="rf-field"><span>目前年齡</span><input id="rfAge" type="text" inputmode="numeric" placeholder="30"><i>歲</i></label>
+              <label class="rf-field"><span>預計退休年齡</span><input id="rfRetire" type="text" inputmode="numeric" placeholder="65"><i>歲</i></label>
+            </fieldset>
+            <fieldset class="rf-set">
+              <legend>每月收支</legend>
+              <label class="rf-field"><span>月收入（稅後）</span><input id="rfIncome" type="text" inputmode="numeric" placeholder="60,000"><i>元</i></label>
+              <label class="rf-field"><span>月支出</span><input id="rfExpense" type="text" inputmode="numeric" placeholder="40,000"><i>元</i></label>
+            </fieldset>
+            <fieldset class="rf-set">
+              <legend>資產（市值）</legend>
+              <label class="rf-field"><span>現金／活存</span><input id="rfCash" type="text" inputmode="numeric" placeholder="300,000"><i>元</i></label>
+              <label class="rf-field"><span>投資（股／基金／ETF）</span><input id="rfInvest" type="text" inputmode="numeric" placeholder="500,000"><i>元</i></label>
+              <label class="rf-field"><span>不動產</span><input id="rfRealty" type="text" inputmode="numeric" placeholder="0"><i>元</i></label>
+            </fieldset>
+            <fieldset class="rf-set">
+              <legend>負債（餘額）</legend>
+              <label class="rf-field"><span>房貸</span><input id="rfMortgage" type="text" inputmode="numeric" placeholder="0"><i>元</i></label>
+              <label class="rf-field"><span>其他貸款（信貸／車貸／卡債）</span><input id="rfDebt" type="text" inputmode="numeric" placeholder="0"><i>元</i></label>
+            </fieldset>
+            <fieldset class="rf-set">
+              <legend>假設</legend>
+              <label class="rf-field"><span>預期年報酬率</span><input id="rfRate" type="text" inputmode="decimal" placeholder="6"><i>%</i></label>
+              <label class="rf-field"><span>退休後月支出（今值）</span><input id="rfRetireExp" type="text" inputmode="numeric" placeholder="留空＝沿用月支出"><i>元</i></label>
+            </fieldset>
+          </div>
+          <div class="rf-foot">
+            <button type="submit" class="rf-go">產生我的健檢報告</button>
+            <span class="rf-priv">資料只在你的瀏覽器計算，不會上傳。</span>
+          </div>
+        </form>
+      </article>
+
+      <article class="calc-sec calc-widget" id="calc">
+        <div class="sec-head reveal">
+          <span class="tag">RETIREMENT CALCULATOR</span>
+          <h2>退休／複利試算</h2>
+          <p>把現有資產、每月投入與時間拉出來看，先確認目標和現況是否對得起來。</p>
+        </div>
+        <div class="calc-tabs reveal" role="tablist" aria-label="試算模式">
+          <button class="tab" role="tab" aria-selected="true" data-mode="forward">我能累積多少？</button>
+          <button class="tab" role="tab" aria-selected="false" data-mode="goal">目標怎麼達成？</button>
+        </div>
+
+        <div class="calc-grid result-pending">
+          <div class="calc-panel" id="calcPanel" data-io="slider">
+            <div class="panel-head">
+              <span class="panel-title">你的條件</span>
+              <div class="io-toggle" role="group" aria-label="輸入方式">
+                <button type="button" data-io="slider" aria-pressed="true">滑桿</button>
+                <button type="button" data-io="input" aria-pressed="false">輸入</button>
+              </div>
+            </div>
+            <div id="forwardFields"></div>
+            <div id="goalFields" class="hide"></div>
+            <details class="adv">
+              <summary>進階設定 <i>通膨・每年增額・成本費用</i></summary>
+              <div class="adv-body" id="advFields"></div>
+              <div class="compound-freq">
+                <span class="cf-label">複利頻率
+                  <span class="info" tabindex="0" role="img" aria-label="多久結算一次利息。結算越頻繁，長期成長略快。每月最貼近定期定額的實際情況。" data-tip="多久結算一次利息。結算越頻繁，長期成長略快。每月最貼近定期定額的實際情況。">?</span>
+                </span>
+                <div class="seg" id="compoundFreq" role="group" aria-label="複利頻率">
+                  <button type="button" data-cm="1" aria-pressed="false">每月</button>
+                  <button type="button" data-cm="3" aria-pressed="false">每季</button>
+                  <button type="button" data-cm="6" aria-pressed="false">每半年</button>
+                  <button type="button" data-cm="12" aria-pressed="true">每年</button>
+                </div>
+              </div>
+            </details>
+            <div class="events" id="eventsWrap">
+              <div class="events-head">
+                <b>人生事件</b>
+                <i>在第幾年中途提領或投入</i>
+              </div>
+              <div class="chips" id="eventChips"></div>
+              <div id="eventList"></div>
+              <button type="button" class="add-event" id="addEvent">新增一筆事件</button>
+            </div>
+          </div>
+
+          <div class="result-stage">
+            <div class="stage-drag" id="stageDrag" role="button" tabindex="0" aria-label="拖動即時檢視，可移到想要的位置" title="拖動可移動位置；連點兩下回到頂端"><span class="grip"></span></div>
+            <button class="stage-zoom" id="stageZoom" type="button" aria-label="放大即時檢視" aria-pressed="false" title="放大檢視">
+              <svg class="zi-in" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="zi-out" viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <button class="stage-close" id="stageClose" type="button" aria-label="把即時檢視收到右側" title="收到右側">✕</button>
+            <div id="resForward">
+              <div class="headline">
+                <span>資產終值（名目）</span>
+                <b id="totalOut">—</b>
+                <span class="real-sub hide" id="realSub"></span>
+                <span class="mini-kpi" id="miniKpi"></span>
+              </div>
+            </div>
+            <div class="answer hide" id="resGoal">
+              <span id="ansLabel">要達成目標，你每月需要投入</span>
+              <b id="ansValue">NT$ 12,345</b>
+              <span class="sub" id="ansSub"></span>
+            </div>
+            <div class="chart-box">
+              <div class="chart-tools">
+                <label class="ck"><input type="checkbox" id="ckPaid" checked> 投入本金線</label>
+                <label class="ck"><input type="checkbox" id="ckReal"> 通膨後實質購買力</label>
+                <button type="button" id="numToggle" class="num-toggle" aria-pressed="false" aria-label="切換金額顯示方式：精確數字或概數">精確數字</button>
+                <button type="button" id="shareBtn" class="share-btn" aria-label="複製目前試算條件的分享連結">分享連結</button>
+                <button type="button" id="exportBtn" class="export-btn" aria-label="把目前的試算結果與圖表匯出成圖片">匯出圖片</button>
+              </div>
+              <div class="chart-host" id="chartHost">
+                <svg id="chart" viewBox="0 0 640 300" role="img" aria-label="資產成長曲線圖"></svg>
+                <div class="tip hide" id="chartTip"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="result-detail" id="fwdDetail">
+            <div class="result-nums">
+              <div class="box"><span>你總共投入</span><b id="totalIn">—</b></div>
+              <div class="box gain"><span>複利為你賺進</span><b id="totalGain">—</b></div>
+            </div>
+            <div class="compo" id="compoBar"></div>
+            <div class="evstat hide" id="evStat"></div>
+            <div class="warn hide" id="warnBox"></div>
+            <div class="delay-cost hide" id="delayCost">
+              <span class="ic" aria-hidden="true"></span>
+              <p id="delayText"></p>
+            </div>
+          </div>
+
+          <details class="table-wrap">
+            <summary>逐年明細表</summary>
+            <div class="table-scroll">
+              <table id="yearTable"></table>
+            </div>
+          </details>
+
+          <p class="calc-foot">＊複利頻率可自選，並可選擇納入通膨、每年增額與成本費用。此工具僅為數學試算，不代表任何商品之實際報酬，投資必有風險。</p>
+        </div>
+      </article>
+
+      <article class="quiz-sec tool-widget" id="quiz">
+        <div class="sec-head reveal">
+          <span class="tag">INVESTOR PROFILE</span>
+          <h2>投資性格測驗</h2>
+          <p>用 5 個情境題，看你在投資與金錢決策上容易偏向哪一種直覺。</p>
+        </div>
+        <div class="quiz-card reveal">
+          <div class="quiz-progress" id="quizProgress" aria-hidden="true"></div>
+          <div id="quizBody" aria-live="polite"></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 7. 常見財務問題 -->
+<section id="money-faq" class="money-faq-section">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="tag">MONEY FAQ</span>
+      <h2>常見財務問題</h2>
+      <p>這裡整理一般原則，幫你先建立判斷框架；真正答案仍要回到個人狀況。</p>
+    </div>
+    <div class="faq knowledge-faq reveal">
+      <details>
+        <summary>緊急預備金應該準備多少？</summary>
+        <div class="a money-answer">
+          <b>一般原則</b><p>多數人可先以 3 到 6 個月生活費為目標。</p>
+          <b>影響變數</b><p>收入穩定度、家庭責任、醫療風險、是否有房貸或接案收入。</p>
+          <b>你需要檢查</b><p>如果收入中斷，你可以維持多久不動用投資或借貸。</p>
+        </div>
+      </details>
+      <details>
+        <summary>開始投資前要先做好什麼？</summary>
+        <div class="a money-answer">
+          <b>一般原則</b><p>先確認現金流、預備金與基本保障，再談投資工具。</p>
+          <b>影響變數</b><p>投資期限、可承受虧損、近期是否有買房、結婚或育兒支出。</p>
+          <b>你需要檢查</b><p>這筆錢若短期下跌，你是否仍能照顧生活與既定目標。</p>
+        </div>
+      </details>
+      <details>
+        <summary>退休到底需要準備多少錢？</summary>
+        <div class="a money-answer">
+          <b>一般原則</b><p>可先用退休後年支出乘以 25，做為粗略起點。</p>
+          <b>影響變數</b><p>退休年齡、壽命假設、通膨、醫療支出、勞保勞退與房產現金流。</p>
+          <b>你需要檢查</b><p>目前資產與每月投入，能否在預定退休時間前補上差距。</p>
+        </div>
+      </details>
+      <details>
+        <summary>每月收入應該怎麼分配？</summary>
+        <div class="a money-answer">
+          <b>一般原則</b><p>先分出必要支出、預備金、長期投資與彈性花費。</p>
+          <b>影響變數</b><p>收入高低、家庭人數、房貸比例、是否有短期重大支出。</p>
+          <b>你需要檢查</b><p>每一筆錢是否有明確任務，而不是全部混在同一個帳戶。</p>
+        </div>
+      </details>
+      <details>
+        <summary>保險預算應該占收入多少？</summary>
+        <div class="a money-answer">
+          <b>一般原則</b><p>保險不是買越多越好，而是用合理成本轉移無法承受的風險。</p>
+          <b>影響變數</b><p>年齡、家庭責任、房貸、收入來源、既有保單與公司福利。</p>
+          <b>你需要檢查</b><p>發生疾病、失能或身故時，保障能不能補上現金流缺口。</p>
+        </div>
+      </details>
+      <details>
+        <summary>買房和退休準備衝突時怎麼判斷？</summary>
+        <div class="a money-answer">
+          <b>一般原則</b><p>先看房貸壓力是否壓縮預備金與退休投入，再談房價承受度。</p>
+          <b>影響變數</b><p>頭期款來源、貸款年限、利率變動、家庭支出與職涯穩定度。</p>
+          <b>你需要檢查</b><p>買房後，每月是否仍能維持必要儲蓄與長期投資。</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 8. 關於我 -->
+<section id="about" class="about-section">
   <div class="wrap about-grid">
-    <!-- ★ 你的生活照放這裡:把下面的 photo-life.jpg 改成你的照片檔名 ★ -->
-    <div class="about-photo reveal"><img src="name_card.png" alt="周俊誠生活照"></div>
-    <div class="reveal">
-      <div class="sec-head" style="margin-bottom:18px">
+    <div class="about-photo reveal">
+      <picture>
+        <source srcset="picture.webp" type="image/webp">
+        <img src="picture.jpg" alt="財務顧問周俊誠" loading="lazy" decoding="async">
+      </picture>
+    </div>
+    <div class="about-copy reveal">
+      <div class="sec-head">
         <span class="tag">ABOUT</span>
-        <h2>為什麼我成為財務顧問</h2>
+        <h2>為什麼是我？</h2>
+        <p>我想做的不是把理財講得更炫，而是讓你在重大決策前看清楚選項。</p>
       </div>
-      <p>我是師大數學系出身，在補教業教了七年書。這七年的教學經驗，讓我練成一套把複雜資訊拆解、重新整理成清楚架構的能力——再繁雜的數字和條款，我都能用你聽得懂的方式，一層一層講明白。我的工作不是幫你上課，而是在你做財務決策之前，把所有選項和風險攤開、幫你真正看懂，讓你自己做出最合適的判斷;決定之後，我再陪你把計畫一步一步執行下去。</p>
-      <p style="margin-top:14px">我也曾經相信，只要夠會賺錢，儲蓄和風險都不重要。直到媽媽確診癌症，我才真正明白——再強的賺錢能力，也擋不住「突然無法再賺錢」的風險。</p>
-      <p style="margin-top:14px">而且，我繳過很貴的學費。我曾沉迷於技術分析，把三千塊翻了一百倍變成三十萬，接著全數押進高風險標的，最後帶著超過五十萬的虧損離場。那一刻我才看懂投資的真諦不在進攻，而在配置與風險規劃。後來我也親眼見過收入令人羨慕的人，到了中年積蓄卻所剩無幾，甚至為了錢和最親的人爭執不休，我更確定要走上這條路:<b>賺多少從來不是重點，留得住、扛得住，才是。</b></p>
-      <blockquote class="pull-quote">「報酬率不是最重要的。真正重要的是，當黑天鵝來臨時，你的資產配置能不能陪你度過那段日子。<em>在規劃好之前，投資不叫投資，叫博弈</em>——賭這次的人生不會那麼衰。」</blockquote>
+      <div class="about-story">
+        <h3>師大數學系與七年教學經驗</h3>
+        <p>數學訓練讓我習慣先定義問題，教學經驗則讓我知道：複雜資訊要能被聽懂，才有機會被真正使用。</p>
+      </div>
+      <div class="about-story">
+        <h3>家人生病與自己的投資虧損</h3>
+        <p>家人生病讓我看見收入中斷的現實壓力；自己的投資虧損，也讓我理解沒有風險規劃的報酬追逐，最後常常只剩焦慮。</p>
+      </div>
+      <div class="about-story">
+        <h3>為什麼成為財務顧問</h3>
+        <p>我希望幫助客戶在買房、家庭、退休與投資這些重大決策前，把可選擇的路、可能的風險與執行順序看清楚。</p>
+      </div>
+      <blockquote class="pull-quote">財務規劃的目的，不是追求最高報酬，而是讓人生出現變化時，你依然保有選擇。</blockquote>
       <div class="creds">
         <span>RFC® 國際認證財務顧問師</span>
         <span>人身保險業務員證照</span>
         <span>外幣保險商品證照</span>
         <span>投資型保險商品證照</span>
       </div>
-      <p style="margin-top:14px;font-size:.9rem;color:#5B6760">證照對我來說是工具箱，不是銷售許可。我永遠先看清楚你的問題，再決定該不該打開工具箱、拿哪一樣出來。</p>
     </div>
   </div>
 </section>
 
-<!-- 客戶回饋 -->
-<section style="padding-top:0">
+<!-- 9. 預約與合作常見疑問 -->
+<section id="booking-faq" class="booking-faq-section">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="tag">VOICES</span>
-      <h2>他們這樣說</h2>
+      <span class="tag">BOOKING FAQ</span>
+      <h2>預約與合作常見疑問</h2>
+      <p>如果你擔心第一次談會不會有壓力，先看這裡。</p>
     </div>
-    <div class="quotes-wrap reveal">
-      <button class="q-nav prev" type="button" aria-label="上一組評論">‹</button>
-      <div class="quotes" id="quotesTrack" tabindex="0" role="group" aria-roledescription="輪播" aria-label="客戶評論">
-        <div class="quote">
-          <div class="stars" aria-label="五星好評">★★★★★</div>
-          <p>本來以為理財顧問都會急著推商品，結果俊誠第一句話是「先說說你現在最煩惱的是什麼」。才半年，我們家的帳本第一次這麼清楚。</p>
-          <div class="who"><div class="ava">陳</div><div><b>陳小姐，34 歲</b><span>雙薪家庭・行政人員</span></div></div>
-        </div>
-        <div class="quote">
-          <div class="stars" aria-label="五星好評">★★★★★</div>
-          <p>月薪三萬八也能開始投資，這是俊誠教我的。他把複利講得像故事一樣，我現在每個月都期待對帳單。</p>
-          <div class="who"><div class="ava">張</div><div><b>張先生，27 歲</b><span>社會新鮮人・工程師</span></div></div>
-        </div>
-        <div class="quote">
-          <div class="stars" aria-label="五星好評">★★★★★</div>
-          <p>保單健診那次幫我們省下每年快五萬的重複保費，還補上了真正需要的缺口。專業，而且講人話。</p>
-          <div class="who"><div class="ava">王</div><div><b>王太太，45 歲</b><span>自營商・兩個孩子的媽</span></div></div>
-        </div>
-        <div class="quote">
-          <div class="stars" aria-label="五星好評">★★★★★</div>
-          <p>原本買房頭期款一直存不夠，俊誠幫我把目標拆成每個月的小進度，還把現金和投資分開規劃。三年後我真的拿到鑰匙了。</p>
-          <div class="who"><div class="ava">林</div><div><b>林先生，38 歲</b><span>中階主管・首購族</span></div></div>
-        </div>
-        <div class="quote">
-          <div class="stars" aria-label="五星好評">★★★★★</div>
-          <p>接案收入時高時低，以前完全不敢想退休。他教我用「先付給自己」的方式存錢，現在帳戶有了緩衝，心也踏實多了。</p>
-          <div class="who"><div class="ava">黃</div><div><b>黃小姐，31 歲</b><span>自由工作者・設計師</span></div></div>
-        </div>
-        <div class="quote">
-          <div class="stars" aria-label="五星好評">★★★★★</div>
-          <p>退休前最怕被話術，俊誠反而幫我把名下保單和基金一筆筆攤開檢視，留下真正需要的。談的是我的人生，不是他的業績。</p>
-          <div class="who"><div class="ava">吳</div><div><b>吳先生，52 歲</b><span>製造業・準退休族</span></div></div>
-        </div>
-        <div class="quote">
-          <div class="stars" aria-label="五星好評">★★★★★</div>
-          <p>值大夜班沒時間理財，他把流程簡化到我每個月只要確認一次。從每月三千開始，現在看到累積的數字真的會上癮。</p>
-          <div class="who"><div class="ava">蔡</div><div><b>蔡小姐，29 歲</b><span>醫護人員・小資族</span></div></div>
-        </div>
-        <div class="quote">
-          <div class="stars" aria-label="五星好評">★★★★★</div>
-          <p>自己亂買一通好幾年，績效還是普通。經過他重新配置與每季追蹤，配置變清楚了，遇到大跌也比較不慌，知道自己在做什麼。</p>
-          <div class="who"><div class="ava">鄭</div><div><b>鄭先生，41 歲</b><span>科技業・雙寶爸</span></div></div>
-        </div>
-      </div>
-      <button class="q-nav next" type="button" aria-label="下一組評論">›</button>
+    <div class="faq booking-faq reveal">
+      <details>
+        <summary>免費 30 分鐘健檢真的免費嗎？</summary>
+        <div class="a">是，首次 30 分鐘財務健檢不收費。目的只是先釐清你目前最主要的問題與下一步。</div>
+      </details>
+      <details>
+        <summary>過程中會不會推銷商品？</summary>
+        <div class="a">不會一開始就推商品。若後續規劃真的需要工具，我會先說明原因、選項與限制，再由你決定。</div>
+      </details>
+      <details>
+        <summary>資產不多也適合嗎？</summary>
+        <div class="a">適合。越早把現金流、預備金與目標順序整理好，後面越不容易繞遠路。</div>
+      </details>
+      <details>
+        <summary>需要準備哪些資料？</summary>
+        <div class="a">第一次不用整理完整資料。能大概知道收入、支出、資產、負債與目前最想問的問題即可。</div>
+      </details>
+      <details>
+        <summary>你會代操或保管資產嗎？</summary>
+        <div class="a">不會。我不代操，也不保管你的資產。你的錢仍在你自己的帳戶裡，決定權也在你手上。</div>
+      </details>
+      <details>
+        <summary>免費健檢結束後會發生什麼？</summary>
+        <div class="a">我會整理你目前最需要先處理的重點。若你需要完整規劃，再討論合作範圍。</div>
+      </details>
+      <details>
+        <summary>正式規劃如何說明費用？</summary>
+        <div class="a">正式合作前會先確認範圍、交付內容與費用。你清楚理解並同意後，才會開始規劃。</div>
+      </details>
     </div>
-    <div class="q-dots" id="quotesDots" role="tablist" aria-label="評論分頁"></div>
   </div>
 </section>
 
-<!-- FAQ -->
-<section id="faq" style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head reveal" style="text-align:center;margin-left:auto;margin-right:auto">
-      <span class="tag">FAQ</span>
-      <h2>你可能想問</h2>
+<!-- 10. 最終 LINE CTA -->
+<section class="cta-final" id="contact">
+  <div class="wrap cta-inner reveal">
+    <h2>想知道現在的準備，能不能支撐未來想過的生活？</h2>
+    <p>用 30 分鐘一起釐清目前的財務現況、目標與可能忽略的問題。</p>
+    <div class="cta-row">
+      <a class="line-btn" href="https://line.me/R/ti/p/@453ubihw" target="_blank" rel="noopener">在 LINE 預約免費 30 分鐘財務健檢</a>
     </div>
-    <div class="faq reveal">
-      <details>
-        <summary>諮詢真的免費嗎?會不會被推銷?</summary>
-        <div class="a">首次 30 分鐘諮詢完全免費。我的原則是「先找到問題，才給合適的工具」，不會一見面就掏商品出來。如果規劃後確實需要保險等工具，我會把選項攤開來說明，要不要採用、跟誰辦，決定權永遠在你手上。</div>
-      </details>
-      <details>
-        <summary>我存款很少、薪水不高，適合找顧問嗎?</summary>
-        <div class="a">非常適合!越早建立正確的金錢習慣，複利的時間就越長。我有很多客戶是從月光族開始的，起點低從來不是問題，不開始才是。</div>
-      </details>
-      <details>
-        <summary>顧問費怎麼收?</summary>
-        <div class="a">首次諮詢免費。後續合作前，我會把費用與我的報酬來源白紙黑字說清楚——包含若你決定透過我投保，我會從保險公司獲得服務報酬這件事。透明，是我能給你的第一個承諾。</div>
-      </details>
-      <details>
-        <summary>可以線上進行嗎?</summary>
-        <div class="a">可以!全程可透過視訊進行，文件都用雲端共享。全台灣(以及海外)的朋友都能合作，大約六成的客戶我們從沒見過面，但一樣熟得像朋友。</div>
-      </details>
-      <details>
-        <summary>找你諮詢，跟自己上網學理財有什麼差?</summary>
-        <div class="a">網路上的知識是通用的，但你的人生是具體的。我的價值不在於教你觀念，而在於把你的收入、家庭、目標和風險承受度全部攤開後，告訴你「以你的狀況，這個決策行不行、風險在哪、怎麼做更穩」。知識你可以自學，但決策的把關，需要一雙站在你這邊的專業眼睛。</div>
-      </details>
-      <details>
-        <summary>你會幫我操作投資或保管我的錢嗎?</summary>
-        <div class="a">不會，這點很重要:你的錢永遠在你自己的帳戶裡。我的角色是給你計畫、教你方法、陪你執行，所有決定權和資產都在你手上。</div>
-      </details>
-    </div>
+    <p class="cta-note">不用事先整理完整資料，帶著你的問題來就好。</p>
   </div>
 </section>
 
 </main>
 
-<!-- 結尾 CTA -->
-<section class="cta-final" id="contact">
-  <div class="wrap cta-inner reveal">
-    <h2>準備好讓錢替你工作了嗎?</h2>
-    <p>留 30 分鐘給自己，我們聊聊你的財務現況。不用準備、不用緊張，帶著問題來就好。</p>
-    <div class="cta-row">
-      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfB8mGXJxAknaxSftw91OrwAaDdNSgM52li7U1aMs5sNwWicg/viewform" target="_blank" rel="noopener">📝 填表單預約諮詢</a>
-      <a class="line-btn" href="https://line.me/R/ti/p/@453ubihw" target="_blank" rel="noopener">💬 加 LINE 聊聊(ID: @453ubihw)</a>
+<!-- 11. Footer -->
+<footer id="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <strong>享退休</strong>
+      <span>周俊誠｜RFC® 國際認證財務顧問師</span>
+      <span>© 2026 享退休財務規劃工作室</span>
     </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <div>© 2026 周俊誠財務規劃工作室</div>
-    <p class="disc">本網站內容僅供教育與參考之用，不構成任何投資、保險或法律建議。投資一定有風險，過去績效不代表未來表現，任何財務決策請依個人狀況審慎評估。</p>
+    <nav class="footer-links" aria-label="頁尾連結">
+      <a href="https://line.me/R/ti/p/@453ubihw" target="_blank" rel="noopener">官方 LINE</a>
+      <a href="#about">關於我</a>
+      <details>
+        <summary>隱私權政策</summary>
+        <p>本網站工具資料皆於瀏覽器內計算；若透過 LINE 聯繫，相關個人資料將僅用於回覆諮詢與合作溝通。</p>
+      </details>
+      <details>
+        <summary>網站內容聲明</summary>
+        <p>本網站內容僅供教育與參考，不構成投資、保險、稅務或法律建議。任何財務決策請依個人狀況審慎評估。</p>
+      </details>
+    </nav>
   </div>
 </footer>
 
@@ -547,19 +629,21 @@
   <span class="pulse-ring" aria-hidden="true"></span>免費諮詢
 </a>
 
-<!-- ── 共用工具 ── -->
+<!-- 共用工具 -->
 <script src="js/utils.js"></script>
-<!-- ── 複利試算機（依相依順序載入）── -->
+<!-- 複利試算機 -->
 <script src="js/calc-data.js"></script>
 <script src="js/calc-fields.js"></script>
 <script src="js/calc-events.js"></script>
 <script src="js/calc-engine.js"></script>
 <script src="js/calc-chart.js"></script>
 <script src="js/calc-render.js"></script>
+<script src="js/share.js"></script>
 <script src="js/unlock.js"></script>
-<!-- ── 其他區塊 ── -->
+<script src="js/report.js"></script>
+<!-- 其他互動 -->
 <script src="js/quiz.js"></script>
-<!-- <script src="js/strategies.js"></script> -->
+<script src="js/strategies.js"></script>
 <script src="js/quotes.js"></script>
 <script src="js/site.js"></script>
 <script src="js/stage-drag.js"></script>
