@@ -84,7 +84,7 @@ function renderResult(){
       +'<div class="blk"><b>👣 建議的下一步</b><p>'+T.next+'</p></div>'
     +'</div>'
     +'<div class="r-cta">'
-      +'<a class="btn" href="#contact">把這個結果，聊成一份計畫 →</a>'
+      +'<a class="btn" href="https://line.me/R/ti/p/@453ubihw" target="_blank" rel="noopener">把這個結果，聊成一份計畫 →</a>'
       +'<button class="quiz-export">🖼 匯出結果</button>'
       +'<button class="quiz-retry">重新測一次</button>'
     +'</div></div>';

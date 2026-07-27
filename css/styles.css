@@ -670,6 +670,42 @@ details.adv .adv-body{padding-top:16px}
 .chart-box{flex:1;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:14px 12px 10px;min-height:200px;margin-top:12px}
 .chart-host{position:relative;width:100%}
 .chart-host svg{width:100%;height:auto;display:block;touch-action:none}
+.calc-chart-cta{
+  margin-top:12px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  background:rgba(216,148,54,.12);
+  border:1px solid rgba(216,148,54,.36);
+  border-radius:14px;
+  padding:13px 14px;
+}
+.calc-chart-cta p{
+  margin:0;
+  color:#DCE4DA;
+  font-size:.82rem;
+  line-height:1.55;
+}
+.calc-chart-cta b{color:#F2C778;font-weight:700}
+.calc-chart-cta a{
+  flex:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:36px;
+  padding:8px 13px;
+  border-radius:999px;
+  background:#06C755;
+  color:#fff;
+  text-decoration:none;
+  font-size:.82rem;
+  font-weight:700;
+  white-space:nowrap;
+  box-shadow:0 10px 22px -14px rgba(0,0,0,.75);
+  transition:filter .18s,transform .18s;
+}
+.calc-chart-cta a:hover{filter:brightness(1.06);transform:translateY(-1px)}
 .tip{position:absolute;pointer-events:none;z-index:5;background:rgba(13,30,24,.95);border:1px solid rgba(216,148,54,.5);
   border-radius:10px;padding:9px 12px;font-size:.78rem;color:#EFEAE0;line-height:1.6;white-space:nowrap;
   box-shadow:0 8px 22px -8px rgba(0,0,0,.6);transform:translate(-50%,-115%)}
@@ -792,6 +828,16 @@ table#yearTable td.note{font-family:var(--sans);text-align:left;color:#F2C778;fo
   .result-stage .headline .mini-kpi b{display:inline;font-size:1em;font-weight:650;color:#F2C778}
   .result-stage .answer{padding:14px 16px;margin-bottom:0}
   .chart-box{min-height:0;padding:10px 10px 4px;margin-top:10px}
+  .calc-chart-cta{
+    flex-direction:column;
+    align-items:stretch;
+    padding:12px;
+  }
+  .calc-chart-cta a{
+    width:100%;
+    white-space:normal;
+    text-align:center;
+  }
   .chart-tools{gap:14px;margin-bottom:6px}
   .ck{font-size:.75rem}
 }
@@ -800,6 +846,36 @@ table#yearTable td.note{font-family:var(--sans);text-align:left;color:#F2C778;fo
   .result-stage .headline b{font-size:clamp(1.35rem,7vw,1.7rem)}
   .calc-panel{padding:16px}
   .mini-kpi{font-size:.78rem}
+}
+@media (min-width:641px) and (max-width:880px){
+  .result-stage{
+    position:relative;
+    top:auto;
+  }
+  .result-stage:not(.is-zoomed){
+    touch-action:auto;
+    -webkit-user-select:auto;
+    user-select:auto;
+    cursor:auto;
+  }
+  .stage-drag,
+  .stage-close,
+  .stage-zoom{display:none}
+}
+@media (min-width:881px){
+  .result-stage.is-floating,
+  .result-stage.is-peek,
+  .result-stage.is-hidden{
+    position:static!important;
+    left:auto!important;
+    top:auto!important;
+    width:auto!important;
+    margin:0!important;
+    opacity:1!important;
+    pointer-events:auto!important;
+    transform:none!important;
+  }
+  .result-stage.is-peek::after{display:none!important}
 }
 
 /* ---------- 功能解鎖（加 LINE 後開放）---------- */

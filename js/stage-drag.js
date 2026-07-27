@@ -7,7 +7,7 @@
   const stage=document.querySelector('.result-stage');
   const handle=document.getElementById('stageDrag');
   if(!stage||!handle) return;
-  const isMobile=()=>matchMedia('(max-width:880px)').matches;
+  const isMobile=()=>matchMedia('(max-width:640px)').matches;
   const resultsReady=()=>!stage.closest('.calc-grid')?.classList.contains('result-pending');
   const cl=(v,a,b)=>Math.max(a,Math.min(b,v));
   const PEEK=42;            // 收到側邊時保留可見的寬度
