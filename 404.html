@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>找不到頁面｜享退休</title>
+<script>
+/* 有些 App（IG、部分社群平台）會把網址裡的 # 編碼成 %23，
+   造成 /web/%23calc 這種找不到的路徑。這裡把它還原成正常的錨點網址。 */
+(function () {
+  var raw = location.pathname;
+  if (raw.indexOf('%23') > -1) {
+    var i = raw.indexOf('%23');
+    var target = raw.slice(0, i) + '#' + decodeURIComponent(raw.slice(i + 3));
+    if (target !== raw) { location.replace(target + location.search); return; }
+  }
+})();
+</script>
+<style>
+  body{margin:0;min-height:100vh;display:grid;place-items:center;
+       background:#FAF6EE;color:#16382E;
+       font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+       text-align:center;padding:24px;line-height:1.9}
+  h1{font-size:1.4rem;margin:0 0 10px}
+  a{color:#23553F}
+</style>
+</head>
+<body>
+  <div>
+    <h1>找不到這個頁面</h1>
+    <p>連結可能不完整或已經變更。<br>
+    請前往 <a href="/web/">享退休首頁</a>。</p>
+  </div>
+</body>
+</html>
